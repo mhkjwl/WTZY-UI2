@@ -3,7 +3,7 @@
  * @file public/bootstrap.php
  * @description 应用引导：安装守卫、环境装载、会话初始化、异常兜底、四端路由分发（要求 PHP 8.5+）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  *
  * 本文件含 PHP 8.x 语法，只能由 index.php 的版本门卫校验后加载；

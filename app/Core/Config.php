@@ -3,7 +3,7 @@
  * @file app/Core/Config.php
  * @description 配置读取器：点号路径访问 config/ 下的数组配置，如 Config::get('database.host')
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

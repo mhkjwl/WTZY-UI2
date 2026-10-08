@@ -3,7 +3,7 @@
  * @file app/Views/user/captcha_field.php
  * @description 图形验证码输入项（登录 / 注册 / 找回密码共用）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-08
  */
 

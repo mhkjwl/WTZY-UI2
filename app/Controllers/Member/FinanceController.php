@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/FinanceController.php
  * @description 会员中心：余额概览、充值、资金流水、发票管理
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

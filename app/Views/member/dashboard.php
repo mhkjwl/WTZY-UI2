@@ -3,12 +3,13 @@
  * @file app/Views/member/dashboard.php
  * @description 会员中心工作台：账户概览 + 待办提示 + 最近动态
  * @author AI
- * @version 0.6.1
- * @date 2026-09-13
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 use App\Core\View;
 use App\Enums\Status;
+use App\Support\Country;
 
 /**
  * @var array $user
@@ -29,6 +30,7 @@ use App\Enums\Status;
  * @var array $recentPackages
  * @var array $recentWaybills
  * @var array $recentMessages
+ * @var array $warehouseCountries
  */
 ?>
 <section class="welcome-banner">
@@ -50,6 +52,21 @@ use App\Enums\Status;
         <button class="btn btn--ghost btn--sm" type="button" onclick="copyUserCode()">复制</button>
     </div>
 </section>
+
+<?php if ($warehouseCountries !== []): ?>
+<section class="panel">
+    <h3 class="section-head"><span class="badge badge--purple">仓库地址</span><span class="rule"></span>
+        <span class="form-hint">点击查看对应国家的海外仓收货地址</span></h3>
+    <div class="tile-grid" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">
+        <?php foreach ($warehouseCountries as $wc): ?>
+        <a class="tile tc-blue" style="text-align:center" href="/user/addresses">
+            <div class="tile__title"><?= View::e(Country::name((string) $wc['country'])) ?>仓</div>
+            <div><span class="badge badge--<?= (int) $wc['status'] === 1 ? 'green' : 'gray' ?>"><?= (int) $wc['status'] === 1 ? '正常运营' : '暂停服务' ?></span></div>
+        </a>
+        <?php endforeach; ?>
+    </div>
+</section>
+<?php endif; ?>
 
 <?php if ($storage !== null): ?>
     <?php

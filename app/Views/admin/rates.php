@@ -3,7 +3,7 @@
  * @file app/Views/admin/rates.php
  * @description 转运资费维护页：按仓库的线路资费 + 增值服务（前台资费页的内容来源）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

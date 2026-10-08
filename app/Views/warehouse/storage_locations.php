@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/storage_locations.php
  * @description 仓储管理局部：库位占用一览（类型/状态筛选 + 数字翻页，只替换本区块）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

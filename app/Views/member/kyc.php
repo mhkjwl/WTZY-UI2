@@ -3,7 +3,7 @@
  * @file app/Views/member/kyc.php
  * @description 会员中心：实名认证（身份证正反面 / 护照照片，提交后由后台审核）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/BaseController.php
  * @description 仓库端控制器基类：员工登录校验、仓库归属隔离、wh.* 权限门卫、菜单与待办徽标
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

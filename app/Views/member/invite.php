@@ -3,7 +3,7 @@
  * @file app/Views/member/invite.php
  * @description 会员中心：邀请返利（邀请码、邀请记录、返利明细）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

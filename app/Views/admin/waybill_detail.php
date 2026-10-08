@@ -3,7 +3,7 @@
  * @file app/Views/admin/waybill_detail.php
  * @description 后台运单详情：运单/用户/费用明细 + 关联包裹 + 物流轨迹 + 状态流转记录
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

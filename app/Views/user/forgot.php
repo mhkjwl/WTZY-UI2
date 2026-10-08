@@ -3,7 +3,7 @@
  * @file app/Views/user/forgot.php
  * @description 用户端找回密码：校验用户名与邮箱 → 邮箱验证码 → 重置密码
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

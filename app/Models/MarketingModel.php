@@ -3,7 +3,7 @@
  * @file app/Models/MarketingModel.php
  * @description 营销内容数据访问：内容页（协议/隐私/禁运品/FAQ）配置
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

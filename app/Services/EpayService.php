@@ -3,7 +3,7 @@
  * @file app/Services/EpayService.php
  * @description 易支付（聚合支付平台）V2 接口对接：RSA 签名/验签、统一下单、订单查询、退款、关闭订单
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  *
  * V2 与 V1 的差别：签名算法为 SHA256WithRSA（商户私钥签名 / 平台公钥验签）、

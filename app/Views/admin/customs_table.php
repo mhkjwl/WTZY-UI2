@@ -3,7 +3,7 @@
  * @file app/Views/admin/customs_table.php
  * @description 报关明细局部渲染
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

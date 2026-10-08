@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/home.php
  * @description 仓库作业台：今日作业量 + 待办统计 + 我的任务 + 模块入口
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

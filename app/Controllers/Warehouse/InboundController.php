@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/InboundController.php
  * @description 收货入库：扫码/单号匹配归属 → 称重量尺 → 上架库位 → 确认入库（未匹配可登记无主件）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

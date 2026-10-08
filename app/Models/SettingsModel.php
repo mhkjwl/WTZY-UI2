@@ -3,7 +3,7 @@
  * @file app/Models/SettingsModel.php
  * @description 系统配置（键值对）数据访问
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

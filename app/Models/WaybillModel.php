@@ -3,7 +3,7 @@
  * @file app/Models/WaybillModel.php
  * @description 运单与报关明细数据访问（订单运单管理、清关管理共用）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-15
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/admin/invoices_region.php
  * @description 发票管理局部区：功能开关、统计、开票申请列表（筛选/翻页/处理后局部替换，规范 §2.5）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

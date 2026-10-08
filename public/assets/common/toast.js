@@ -2,7 +2,7 @@
  * @file assets/common/toast.js
  * @description 全局通知组件 Notify（规范 §3）：右上角堆叠、五类通知、可关闭、非阻塞
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 (function () {

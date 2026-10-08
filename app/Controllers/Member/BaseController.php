@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/BaseController.php
  * @description 会员中心控制器基类：登录守卫、侧边栏菜单、后台同款视图与局部表渲染
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

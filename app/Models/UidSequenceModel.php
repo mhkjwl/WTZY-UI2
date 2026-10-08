@@ -3,7 +3,7 @@
  * @file app/Models/UidSequenceModel.php
  * @description 对外唯一编号的并发取号（注册分配 UID 等场景）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

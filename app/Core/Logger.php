@@ -3,7 +3,7 @@
  * @file app/Core/Logger.php
  * @description 轻量文件日志（JSON Lines，按通道分文件，写入 storage/logs）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  *
  * 用于记录支付回调等需要在事后追溯的异步事件；写日志失败不影响主流程。

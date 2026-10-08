@@ -3,7 +3,7 @@
  * @file app/Models/ClaimModel.php
  * @description 理赔申请：提交、我的理赔列表、详情
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

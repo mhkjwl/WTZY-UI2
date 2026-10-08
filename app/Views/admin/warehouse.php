@@ -3,7 +3,7 @@
  * @file app/Views/admin/warehouse.php
  * @description 仓库管理页：仓库/库位管理 + 编辑对话框
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

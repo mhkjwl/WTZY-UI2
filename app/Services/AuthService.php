@@ -3,7 +3,7 @@
  * @file app/Services/AuthService.php
  * @description 认证业务：用户注册（事务闭环）、用户登录、员工登录（双端 + RBAC 权限加载）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

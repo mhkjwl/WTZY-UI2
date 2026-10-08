@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/SystemController.php
  * @description 系统设置：站点信息 / 邮箱发送 / 员工管理 / 角色权限矩阵
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

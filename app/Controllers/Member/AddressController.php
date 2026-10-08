@@ -3,8 +3,8 @@
  * @file app/Controllers/Member/AddressController.php
  * @description 会员中心：海外仓专属收货地址 + 转运目的地收货地址
  * @author AI
- * @version 0.6.1
- * @date 2026-09-13
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Member;
@@ -24,7 +24,7 @@ final class AddressController extends BaseController
         $this->requireLogin();
         $this->memberView('member/addresses', [
             'title'      => '海外仓地址',
-            'addresses'  => WarehouseAddressModel::listForUser($this->userId()),
+            'addresses'  => WarehouseAddressModel::listForUser($this->userId(), (string) ($this->user['user_code'] ?? '')),
             'userCode'   => (string) ($this->user['user_code'] ?? ''),
         ], 'addresses', '海外仓地址');
     }

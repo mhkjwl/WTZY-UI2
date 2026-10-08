@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/AuthController.php
  * @description 管理端认证：员工登录 / 退出（staff_type=1）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

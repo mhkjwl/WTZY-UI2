@@ -3,7 +3,7 @@
  * @file routes/user.php
  * @description 用户端路由：认证入口 + 会员中心（后台同款外壳）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-15
  */
 

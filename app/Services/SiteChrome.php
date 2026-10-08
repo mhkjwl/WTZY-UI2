@@ -3,7 +3,7 @@
  * @file app/Services/SiteChrome.php
  * @description 官网外壳数据：品牌、SEO 信息、锚点菜单与按身份显示的导航入口
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

@@ -3,7 +3,7 @@
  * @file app/Models/InviteModel.php
  * @description 邀请返利：我的邀请码、邀请记录与返利明细
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

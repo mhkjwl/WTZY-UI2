@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/abnormal.php
  * @description 异常处理：待处理异常件登记与处置（用户申请的退运/销毁在此执行）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

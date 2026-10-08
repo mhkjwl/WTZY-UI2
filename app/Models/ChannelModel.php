@@ -3,7 +3,7 @@
  * @file app/Models/ChannelModel.php
  * @description 物流渠道、分区、价格与附加费数据访问
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

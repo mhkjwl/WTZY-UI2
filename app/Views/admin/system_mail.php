@@ -3,7 +3,7 @@
  * @file app/Views/admin/system_mail.php
  * @description 后台：邮箱发送设置（SMTP 配置与测试）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

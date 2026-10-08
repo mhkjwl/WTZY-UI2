@@ -3,8 +3,8 @@
  * @file app/Views/member/addresses.php
  * @description 会员中心：海外仓专属收货地址（下单时填写，凭识别码归属包裹）
  * @author AI
- * @version 0.6.1
- * @date 2026-09-12
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -40,6 +40,7 @@ use App\Core\View;
                     <?= View::e($addr['warehouse_name']) ?>
                     <span class="badge badge--gray mono"><?= View::e($addr['warehouse_code']) ?></span>
                     <?php if ((int) $addr['is_default'] === 1): ?><span class="badge badge--green">默认</span><?php endif; ?>
+                    <?php if ((int) $addr['warehouse_status'] !== 1): ?><span class="badge badge--gray">暂停服务</span><?php endif; ?>
                     <?php if ((int) $addr['status'] !== 1): ?><span class="badge badge--red">已失效</span><?php endif; ?>
                 </div>
 

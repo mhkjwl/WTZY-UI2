@@ -3,7 +3,7 @@
  * @file app/Views/admin/users_table.php
  * @description 用户列表局部渲染（检索/分页/操作后仅替换本区域）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

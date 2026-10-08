@@ -3,7 +3,7 @@
  * @description 新版外壳增强（光年 v5）：补齐移动端抽屉的三种收起时机（Esc / 视口复位 / bfcache 返回），
  *              并维护侧边栏分组的展开记忆（按端隔离，仅在当前页不在任何分组时恢复）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-08
  */
 (function () {

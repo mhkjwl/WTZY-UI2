@@ -3,7 +3,7 @@
  * @file app/Views/admin/system_site.php
  * @description 站点信息页：网站名称 / 网站关键词 / 网站介绍 编辑与实时预览
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

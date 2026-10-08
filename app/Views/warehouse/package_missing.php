@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/package_missing.php
  * @description 仓库端包裹不存在提示（编号有误、已删除或不属于本仓库）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-15
  */
 ?>

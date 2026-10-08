@@ -3,7 +3,7 @@
  * @description 前端公共助手：统一 Ajax 封装（JSON + CSRF 头）与响应反馈、图片放大预览、
  *              侧边栏待办徽标同步（菜单分组展开与移动端抽屉由模板脚本与 assets/ui/shell.js 负责）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-08
  */
 (function () {

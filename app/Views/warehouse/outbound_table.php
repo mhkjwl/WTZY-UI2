@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/outbound_table.php
  * @description 待出库运单列表局部渲染
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

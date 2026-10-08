@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/AbnormalController.php
  * @description 异常处理：破损/缺件/禁运等登记 + 用户处置申请（退运/销毁）执行
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

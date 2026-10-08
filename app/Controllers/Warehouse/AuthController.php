@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/AuthController.php
  * @description 仓库端认证：员工登录 / 退出（staff_type=2）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

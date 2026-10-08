@@ -3,7 +3,7 @@
  * @file app/Views/member/profile.php
  * @description 会员中心：个人资料 / 登录绑定（绑定邮箱） / 修改密码
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

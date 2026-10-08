@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/HomeController.php
  * @description 管理后台控制台：实时运营概览 + 模块上线状态 + 系统概览
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

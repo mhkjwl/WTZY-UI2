@@ -3,7 +3,7 @@
  * @file app/Controllers/Pay/NotifyController.php
  * @description 支付网关回调：异步通知入账（notify_url）与页面跳转通知（return_url）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  *
  * 本控制器不经登录态，凭网关 RSA 签名鉴权：验签失败、状态非成功、金额不符一律拒绝入账。

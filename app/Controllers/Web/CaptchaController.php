@@ -3,7 +3,7 @@
  * @file app/Controllers/Web/CaptchaController.php
  * @description 图形验证码输出（SVG，按场景独立存储：三端登录 login / login_admin / login_warehouse、注册 register、找回密码 reset）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/member/coupons.php
  * @description 会员中心：我的优惠券与领券中心
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

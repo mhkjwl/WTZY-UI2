@@ -3,7 +3,7 @@
  * @file app/Views/layouts/site.php
  * @description 转运官网布局：顶部导航（按登录身份显示入口）+ 内容区 + 页脚
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

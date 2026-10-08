@@ -3,7 +3,7 @@
  * @file app/Views/admin/channels.php
  * @description 物流渠道列表页 + 渠道编辑对话框
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

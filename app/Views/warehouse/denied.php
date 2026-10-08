@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/denied.php
  * @description 仓库端无权限提示（当前角色缺少对应 wh.* 权限点）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 ?>

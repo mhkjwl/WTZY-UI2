@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/BaseController.php
  * @description 管理端控制器基类：员工登录校验、RBAC 权限门卫、菜单过滤、后台视图与局部表渲染
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

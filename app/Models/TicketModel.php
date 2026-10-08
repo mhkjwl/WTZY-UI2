@@ -3,7 +3,7 @@
  * @file app/Models/TicketModel.php
  * @description 客服工单与回复数据访问
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

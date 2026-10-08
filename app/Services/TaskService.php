@@ -4,7 +4,7 @@
  * @description 系统自动任务：自动签收 / 待激活积分入账 / 退运销毁兜底退款
  *              全部任务幂等可重试；由 CLI（tasks/run.php）、后台一键执行与页面懒执行共同驱动
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

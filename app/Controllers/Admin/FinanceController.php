@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/FinanceController.php
  * @description 财务中心：总览统计 + 资金流水 + 充值单人工处理 + 汇率维护
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

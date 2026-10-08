@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/tasks_table.php
  * @description 作业任务列表局部渲染
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

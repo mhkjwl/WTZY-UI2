@@ -3,7 +3,7 @@
  * @file app/Views/admin/packages.php
  * @description 后台包裹管理页：统计 + 检索工具栏 + 局部表
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

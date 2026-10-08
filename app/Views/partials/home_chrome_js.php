@@ -3,7 +3,7 @@
  * @file app/Views/partials/home_chrome_js.php
  * @description 官网外壳共用脚本：顶栏滚动、进度条、回到顶部、移动端菜单、入场动画、数字滚动、年份
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 ?>

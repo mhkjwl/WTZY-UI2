@@ -3,7 +3,7 @@
  * @file app/Controllers/Web/HomeController.php
  * @description 转运官网首页：品牌展示与合作入口
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

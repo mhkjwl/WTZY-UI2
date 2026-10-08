@@ -3,7 +3,7 @@
  * @file app/Views/partials/home_header.php
  * @description 官网外壳共用：顶栏、主导航与移动端菜单（品牌与联系方式取自后台配置）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

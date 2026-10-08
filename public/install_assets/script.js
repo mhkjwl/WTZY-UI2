@@ -2,7 +2,7 @@
  * @file install/assets/script.js
  * @description 安装向导交互：自定义确认弹窗（禁用原生 confirm）与按钮防重复提交
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 (function () {

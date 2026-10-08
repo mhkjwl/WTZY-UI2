@@ -3,7 +3,7 @@
  * @file app/Views/admin/home.php
  * @description 管理后台控制台模板：渐变欢迎横幅 + 实时统计卡 + 模块上线磁贴 + 系统概览
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

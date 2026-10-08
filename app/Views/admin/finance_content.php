@@ -3,7 +3,7 @@
  * @file app/Views/admin/finance_content.php
  * @description 财务中心局部内容：待处理充值（前置）→ 资金流水 → 汇率维护
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

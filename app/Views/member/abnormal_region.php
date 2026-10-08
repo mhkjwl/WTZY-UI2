@@ -3,7 +3,7 @@
  * @file app/Views/member/abnormal_region.php
  * @description 会员中心：异常件统计与记录表区域（翻页时局部替换，规范 §2.5）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-15
  */
 

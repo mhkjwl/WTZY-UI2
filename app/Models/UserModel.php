@@ -3,7 +3,7 @@
  * @file app/Models/UserModel.php
  * @description 用户表数据访问（前缀由安装配置 DB_PREFIX 决定）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

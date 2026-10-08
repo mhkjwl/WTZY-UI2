@@ -3,7 +3,7 @@
  * @file app/Views/partials/home_footer.php
  * @description 官网外壳共用：页脚（品牌/联系方式/备案/订阅）与浮动按钮
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

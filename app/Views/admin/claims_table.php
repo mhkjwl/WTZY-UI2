@@ -3,7 +3,7 @@
  * @file app/Views/admin/claims_table.php
  * @description 理赔列表局部渲染（受理/初审/财务审核/终审/赔付按钮按状态+权限显隐）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

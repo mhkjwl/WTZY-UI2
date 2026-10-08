@@ -3,7 +3,7 @@
  * @file app/Views/layouts/base.php
  * @description 全站公共布局：顶栏导航 + 内容区 + 全局通知容器 + CSRF meta
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

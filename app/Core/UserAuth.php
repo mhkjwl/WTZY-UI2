@@ -3,7 +3,7 @@
  * @file app/Core/UserAuth.php
  * @description 用户端会话鉴权（普通用户/会员用户）：登录态读取与账号可用性闸门
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  *
  * 设计取舍：会话只作为「谁登录了」的凭据，账号能否使用一律以数据库当前状态为准，

@@ -3,7 +3,7 @@
  * @file app/Models/AdminModel.php
  * @description 员工账号数据访问（含角色联查与 RBAC 权限加载、登录账号与密码维护）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

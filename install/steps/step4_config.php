@@ -3,7 +3,7 @@
  * @file install/steps/step4_config.php
  * @description 安装第四步：系统配置（站点名称 / 域名 / 时区）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-08
  */
 

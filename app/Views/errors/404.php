@@ -3,7 +3,7 @@
  * @file app/Views/errors/404.php
  * @description 404 页面（独立外壳：不依赖布局、数据库与历史样式表，自持新版样式）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

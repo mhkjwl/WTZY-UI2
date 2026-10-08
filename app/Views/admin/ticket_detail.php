@@ -3,7 +3,7 @@
  * @file app/Views/admin/ticket_detail.php
  * @description 后台工单详情：工单与用户信息 + 完整对话记录（区分用户/客服）+ 受理/回复/关闭
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

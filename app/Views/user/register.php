@@ -3,7 +3,7 @@
  * @file app/Views/user/register.php
  * @description 用户端注册页（注册成功自动登录并分配专属海外仓识别码）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

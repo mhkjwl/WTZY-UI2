@@ -3,7 +3,7 @@
  * @file app/Views/admin/system_tasks.php
  * @description 自动任务页：查看执行状态并手动触发（自动签收 / 待激活积分入账 / 退运销毁兜底退款）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

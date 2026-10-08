@@ -3,7 +3,7 @@
  * @file app/Views/admin/denied.php
  * @description 无权限访问页（RBAC 拦截提示，规范 §2.4 引导性空状态）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 ?>

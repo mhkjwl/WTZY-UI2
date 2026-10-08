@@ -3,7 +3,7 @@
  * @file app/Services/FreightService.php
  * @description 运费试算：首重续重 + 分区 + 附加费 + 增值服务 + 保价 + 会员折扣
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

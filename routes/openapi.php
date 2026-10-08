@@ -3,7 +3,7 @@
  * @file routes/openapi.php
  * @description 开放 API 路由（物流商 / 清关行 / 支付渠道 / 电商平台，URL 前缀 /api）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

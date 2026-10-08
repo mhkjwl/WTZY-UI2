@@ -3,7 +3,7 @@
  * @file app/Services/NoticeService.php
  * @description 公告邮件投递：按注册邮箱向可发送用户逐个投递，统计成功/失败数
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

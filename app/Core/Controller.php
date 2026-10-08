@@ -3,7 +3,7 @@
  * @file app/Core/Controller.php
  * @description 控制器抽象基类：视图渲染、统一 JSON 信封、CSRF 校验
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

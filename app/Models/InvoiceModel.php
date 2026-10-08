@@ -3,7 +3,7 @@
  * @file app/Models/InvoiceModel.php
  * @description 发票申请：会员端提交与查询、后台检索与开票处理
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

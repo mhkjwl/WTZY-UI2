@@ -3,7 +3,7 @@
  * @file app/Views/admin/warehouse_reports.php
  * @description 仓库报表：各仓在库量、今日出入库、待打包/待出库、异常件与库位占用
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

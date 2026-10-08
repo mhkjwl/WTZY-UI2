@@ -3,7 +3,7 @@
  * @file app/Enums/Status.php
  * @description 全局状态机文案与编码（四端共用，禁止各端硬编码状态字符串）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-15
  */
 

@@ -4,7 +4,7 @@
  * @file config/database.php
  * @description 数据库连接配置（读取 .env，未提供时回退本机开发默认值）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

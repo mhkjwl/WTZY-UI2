@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/login.php
  * @description 仓库端登录页（与管理员端/用户端共用同一分栏版式）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/member/package_detail.php
  * @description 会员中心：包裹详情（信息 + 称重尺寸 + 照片 + 异常记录 + 凭证上传）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

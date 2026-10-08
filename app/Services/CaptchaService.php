@@ -3,7 +3,7 @@
  * @file app/Services/CaptchaService.php
  * @description 图形验证码：SVG 渲染（不依赖 GD 与字体文件），会话暂存、一次性核销
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

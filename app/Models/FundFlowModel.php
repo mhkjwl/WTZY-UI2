@@ -3,7 +3,7 @@
  * @file app/Models/FundFlowModel.php
  * @description 资金流水与账户余额变动（唯一账本入口：余额只允许经此模型流水化变更）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

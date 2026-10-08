@@ -3,8 +3,8 @@
  * @file app/Models/WarehouseModel.php
  * @description 仓库与库位数据访问
  * @author AI
- * @version 0.6.1
- * @date 2026-09-14
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 namespace App\Models;
@@ -26,6 +26,17 @@ final class WarehouseModel
         );
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row === false ? null : $row;
+    }
+
+    /**
+     * 会员端快捷入口：按国家聚合的仓库分布（有任一启用仓即为运营中，含停用国家供用户知情）
+     */
+    public static function publicCountries(): array
+    {
+        return Database::pdo()->query(
+            'SELECT country, MAX(status) AS status FROM ' . Database::table('warehouses')
+            . ' WHERE deleted_at IS NULL GROUP BY country ORDER BY MIN(sort) ASC, MIN(id) ASC'
+        )->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**

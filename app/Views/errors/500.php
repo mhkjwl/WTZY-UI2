@@ -3,7 +3,7 @@
  * @file app/Views/errors/500.php
  * @description 500 页面：生产环境隐藏异常细节，仅开发环境展示（独立外壳，自持新版样式）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

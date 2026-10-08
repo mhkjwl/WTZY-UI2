@@ -3,7 +3,7 @@
  * @file routes/admin.php
  * @description 管理端路由（运营/客服/财务/管理员；各模块写操作均挂独立权限点）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

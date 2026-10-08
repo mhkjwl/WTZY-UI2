@@ -3,7 +3,7 @@
  * @file app/Views/admin/finance_recharge_settings.php
  * @description 后台：充值设置（档位、易支付在线渠道、人工入账渠道）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

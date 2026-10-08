@@ -3,7 +3,7 @@
  * @file app/Views/member/notices_content.php
  * @description 网站公告列表局部渲染（检索/分页后仅替换本区域）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

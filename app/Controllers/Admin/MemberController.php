@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/MemberController.php
  * @description 后台会员与营销：会员等级权益、优惠券管理发放、邀请返利设置
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

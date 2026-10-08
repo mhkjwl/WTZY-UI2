@@ -3,7 +3,7 @@
  * @file app/Views/member/points.php
  * @description 会员中心：积分明细与升级进度
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

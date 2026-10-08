@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/UserController.php
  * @description 用户管理：列表检索 / 资料与权益编辑（含登录凭据）/ 启用禁用 / 风控设置 / 余额调整（各操作独立权限点）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

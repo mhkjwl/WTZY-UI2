@@ -3,7 +3,7 @@
  * @file app/Views/member/tracking.php
  * @description 会员中心：物流跟踪（检索/翻页/切换运单均局部刷新，规范 §2.5）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

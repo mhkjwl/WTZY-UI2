@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/RateController.php
  * @description 转运资费：前台资费页的内容维护（按仓库的线路资费 + 增值服务）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

@@ -3,7 +3,7 @@
  * @file app/Models/UserAuthModel.php
  * @description 用户登录方式绑定表数据访问（账号唯一性在此层保证）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

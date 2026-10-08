@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/storage.php
  * @description 仓储管理：在库检索 / 上架移库 / 无主件指定归属 / 库位占用一览
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

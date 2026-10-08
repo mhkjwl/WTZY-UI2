@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/ProfileController.php
  * @description 会员中心：个人资料、绑定邮箱、修改密码、实名认证（证件材料上传 + 后台审核）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

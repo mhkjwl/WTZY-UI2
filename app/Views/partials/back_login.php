@@ -3,7 +3,7 @@
  * @file app/Views/partials/back_login.php
  * @description 后台类登录页（管理端 / 仓库端共用同一份结构与样式，仅端名与文案不同）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

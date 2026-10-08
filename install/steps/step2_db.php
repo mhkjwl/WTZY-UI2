@@ -3,7 +3,7 @@
  * @file install/steps/step2_db.php
  * @description 安装第二步：数据库配置（连接信息 + 表前缀；测试连接并创建数据库，建表在第五步统一执行）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-08
  */
 

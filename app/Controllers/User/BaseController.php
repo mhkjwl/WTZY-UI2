@@ -3,7 +3,7 @@
  * @file app/Controllers/User/BaseController.php
  * @description 用户端控制器基类：统一登录校验入口（含账号禁用/黑名单拦截）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

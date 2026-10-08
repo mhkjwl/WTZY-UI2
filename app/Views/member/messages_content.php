@@ -3,7 +3,7 @@
  * @file app/Views/member/messages_content.php
  * @description 会员中心消息列表局部内容（检索/分页后仅替换本区域）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

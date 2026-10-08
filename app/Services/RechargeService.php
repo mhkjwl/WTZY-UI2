@@ -3,7 +3,7 @@
  * @file app/Services/RechargeService.php
  * @description 充值单结算：网关收款入账、状态同步、退款（余额与流水同源，保证账实一致）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/member/messages.php
  * @description 会员中心消息中心页（仅本人定向消息）：概览统计 + 局部列表
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

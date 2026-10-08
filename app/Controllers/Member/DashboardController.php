@@ -3,8 +3,8 @@
  * @file app/Controllers/Member/DashboardController.php
  * @description 会员中心工作台：账户概览、包裹与运单动态、待办提示
  * @author AI
- * @version 0.6.1
- * @date 2026-09-12
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Member;
@@ -16,6 +16,7 @@ use App\Models\MemberLevelModel;
 use App\Models\MessageModel;
 use App\Models\PackageModel;
 use App\Models\TicketModel;
+use App\Models\WarehouseModel;
 
 final class DashboardController extends BaseController
 {
@@ -72,6 +73,7 @@ final class DashboardController extends BaseController
             'recentWaybills' => $this->recentWaybills($userId),
             'recentMessages' => MessageModel::inbox($userId, 5, 0)['rows'],
             'recentNotices'  => MessageModel::broadcastList(5, 0)['rows'],
+            'warehouseCountries' => WarehouseModel::publicCountries(),
         ], 'dashboard', '工作台');
     }
 

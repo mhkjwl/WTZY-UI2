@@ -3,7 +3,7 @@
  * @file app/Views/admin/package_detail.php
  * @description 后台包裹详情：所属用户 + 包裹信息 + 称重计量 + 照片 + 异常与处置记录
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

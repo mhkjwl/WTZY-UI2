@@ -3,7 +3,7 @@
  * @file app/Views/admin/customs.php
  * @description 清关管理页：报关明细列表 + 清关状态维护
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

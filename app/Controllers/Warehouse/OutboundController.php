@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/OutboundController.php
  * @description 出库交接：待出库运单（已支付/待出库）录入承运单号并确认出库，承运商以用户下单渠道为准
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

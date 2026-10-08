@@ -4,7 +4,7 @@
  * @description 会员中心布局（光年 v5 外壳）：与管理端同款结构，顶栏账号菜单内含会员等级与返回官网；
  *              已迁移页面加载新版样式，未迁移页面保持旧观感
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 
@@ -91,6 +91,7 @@ $memberName = (string) ($user['display_name'] ?? $user['user_no'] ?? '');
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><span class="dropdown-item-text text-muted small">Lv<?= (int) ($user['member_level'] ?? 1) ?> <?= View::e($user['level_name'] ?? '') ?></span></li>
                             <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/user/profile"><i class="mdi mdi-account-edit-outline"></i><span>个人资料</span></a></li>
                             <li><a class="dropdown-item" href="/"><i class="mdi mdi-home-outline"></i><span>返回官网</span></a></li>
                             <li>
                                 <a class="dropdown-item" href="javascript:void(0)" onclick="logoutConfirm('/user/logout')">

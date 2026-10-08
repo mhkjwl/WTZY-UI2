@@ -3,7 +3,7 @@
  * @file app/Views/admin/finance.php
  * @description 财务中心页：总览统计 + 流水/充值/汇率局部区
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 

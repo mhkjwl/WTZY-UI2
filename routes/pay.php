@@ -3,7 +3,7 @@
  * @file routes/pay.php
  * @description 支付网关回调路由（公开访问，凭网关 RSA 签名鉴权，不走登录态与 CSRF）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

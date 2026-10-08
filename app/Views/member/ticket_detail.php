@@ -3,7 +3,7 @@
  * @file app/Views/member/ticket_detail.php
  * @description 会员中心：工单详情与对话
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

@@ -3,7 +3,7 @@
  * @file app/Models/PointsModel.php
  * @description 用户积分账本：余额变动只经流水，保证可追溯；签收积分先入待激活账本，缓冲期满再入账
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-16
  */
 

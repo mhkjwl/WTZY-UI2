@@ -3,7 +3,7 @@
  * @file app/Services/UploadService.php
  * @description 图片上传：类型/大小校验 → 按年月归档落盘 → 返回可访问 URL（用户端与仓库端共用）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  */
 

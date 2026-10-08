@@ -3,7 +3,7 @@
  * @file routes/warehouse.php
  * @description 仓库端路由（操作员 / 主管 / 打包员 / 出库员；作业动作按 wh.* 权限点门卫）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

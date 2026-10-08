@@ -3,7 +3,7 @@
  * @file app/Views/partials/home_head.php
  * @description 官网外壳共用：头部 meta、站点标题与专属样式（首页与转运资费页共用）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-10-09
  *
  * 品牌与 SEO 取自后台「站点信息」；页面可传 pageTitle 作为二级标题

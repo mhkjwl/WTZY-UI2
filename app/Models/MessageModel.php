@@ -3,7 +3,7 @@
  * @file app/Models/MessageModel.php
  * @description 站内消息数据访问：后台全站公告的发布维护 + 用户端消息中心读取
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-13
  */
 

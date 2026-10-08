@@ -3,7 +3,7 @@
  * @file app/Views/admin/reports.php
  * @description 数据报表页：核心指标 + 近 14 天趋势 + 包裹/工单/理赔统计（CSS 图表，零外部依赖）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  */
 

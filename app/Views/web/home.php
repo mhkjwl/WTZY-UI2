@@ -3,7 +3,7 @@
  * @file app/Views/web/home.php
  * @description 官网首页（独立页面外壳：自带页头/页脚与专属样式，与系统其余页面样式隔离）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-14
  *
  * 品牌名、SEO 与联系方式均来自后台「系统 → 站点信息」；

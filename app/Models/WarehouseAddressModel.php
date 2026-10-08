@@ -3,8 +3,8 @@
  * @file app/Models/WarehouseAddressModel.php
  * @description 用户海外仓收货地址数据访问（每用户每仓库一条）
  * @author AI
- * @version 0.6.1
- * @date 2026-09-13
+ * @version 0.6.2
+ * @date 2026-10-09
  */
 
 namespace App\Models;
@@ -15,20 +15,28 @@ use PDO;
 final class WarehouseAddressModel
 {
     /**
-     * 用户的全部海外仓专属收货地址（含仓库信息，用于会员中心展示与复制）
+     * 用户的海外仓收货地址：实时按仓库表组装（仓库调整后会员端即同步），
+     * 用户地址记录仅提供默认仓标记与失效状态
      */
-    public static function listForUser(int $userId): array
+    public static function listForUser(int $userId, string $userCode): array
     {
         $stmt = Database::pdo()->prepare(
-            'SELECT a.id, a.user_code, a.full_name, a.phone, a.country, a.state, a.city, a.address, a.zip_code,
-                    a.is_default, a.status, w.name AS warehouse_name, w.code AS warehouse_code
-             FROM ' . Database::table('warehouse_addresses') . ' a
-             JOIN ' . Database::table('warehouses') . ' w ON w.id = a.warehouse_id
-             WHERE a.user_id = :uid
-             ORDER BY a.is_default DESC, a.id ASC'
+            'SELECT w.id, w.name AS warehouse_name, w.code AS warehouse_code, w.status AS warehouse_status,
+                    w.country, w.state, w.city, w.address, w.zip_code, w.contact_phone AS phone,
+                    COALESCE(a.is_default, 0) AS is_default, COALESCE(a.status, 1) AS status
+             FROM ' . Database::table('warehouses') . ' w
+             LEFT JOIN ' . Database::table('warehouse_addresses') . ' a ON a.warehouse_id = w.id AND a.user_id = :uid
+             WHERE w.deleted_at IS NULL
+             ORDER BY is_default DESC, w.sort ASC, w.id ASC'
         );
         $stmt->execute([':uid' => $userId]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($rows as &$row) {
+            $row['user_code'] = $userCode;
+            $row['full_name'] = self::recipientName((string) $row['warehouse_code'], $userCode);
+        }
+        unset($row);
+        return $rows;
     }
 
     public static function existsForUser(int $userId, int $warehouseId): bool

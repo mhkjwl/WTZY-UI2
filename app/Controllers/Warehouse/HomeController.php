@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/HomeController.php
  * @description 仓库端作业台：今日作业量 + 我的任务 + 模块入口（按权限显隐）
  * @author AI
- * @version 0.6.1
+ * @version 0.6.2
  * @date 2026-09-12
  */
 
