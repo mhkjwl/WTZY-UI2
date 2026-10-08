@@ -1,0 +1,99 @@
+/* ============================================================
+   @file assets/common/warehouse.css
+   @description 仓库端作业样式：大号扫码输入框与大按钮，适配扫码枪 / 手机 / 电脑
+   @author AI
+   @version 0.6
+   @date 2026-09-12
+   ============================================================ */
+
+/* ── 扫码作业区 ── */
+.wh-scan {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 16px;
+    border: 1px dashed #93c5fd;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f8fbff, #ffffff);
+}
+.wh-scan__field { flex: 1 1 320px; min-width: 240px; }
+.wh-scan__input {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    border: 2px solid #c7d2fe;
+    border-radius: 12px;
+    background: #fff;
+}
+.wh-scan__input:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12); }
+.wh-scan__hint { font-size: 13px; color: #6b7280; margin-top: 8px; line-height: 1.8; }
+
+/* ── 大号作业按钮与输入（PDA 触摸友好） ── */
+.wh-btn-lg {
+    min-height: 52px;
+    padding: 0 28px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 12px;
+}
+.wh-field { margin-bottom: 16px; }
+.wh-field > .form-label { font-size: 15px; font-weight: 600; margin-bottom: 8px; display: block; }
+.wh-field .form-input { height: 50px; font-size: 17px; }
+.wh-field textarea.form-input { height: auto; padding: 12px 14px; font-size: 15px; }
+
+/* 重量/尺寸录入：数字大且等宽，便于核对 */
+.wh-num { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 18px; text-align: right; }
+
+/* ── 作业步骤条 ── */
+.wh-steps { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.wh-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: #eef1f6;
+    color: #6b7280;
+}
+.wh-step.is-done { background: rgba(22, 163, 74, 0.12); color: #15803d; }
+.wh-step.is-active { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; font-weight: 600; }
+
+/* ── 作业卡片（入库匹配结果、运单摘要） ── */
+.wh-card {
+    border: 1px solid #e5e9f2;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+}
+.wh-card__title { font-size: 16px; font-weight: 600; margin-bottom: 10px; color: #1f2937; }
+.wh-kv { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 14px; }
+.wh-kv > span { color: #6b7280; flex: none; }
+.wh-kv > b { color: #1d4ed8; text-align: right; word-break: break-all; }
+.wh-kv > b.v-money { color: #047857; }
+.wh-kv > b.v-code { color: #6d28d9; }
+
+/* ── 结果提示条 ── */
+.wh-flash {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+.wh-flash--ok { background: #ecfdf5; color: #047857; }
+.wh-flash--warn { background: #fffbeb; color: #b45309; }
+.wh-flash--bad { background: #fef2f2; color: #b91c1c; }
+
+/* 小屏（手机/PDA）加大列表行点击区 */
+@media (max-width: 600px) {
+    .wh-scan__input { height: 52px; font-size: 18px; }
+    .wh-btn-lg { width: 100%; }
+    .admin-content { padding: 12px; }
+}

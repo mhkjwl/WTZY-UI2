@@ -1,0 +1,914 @@
+/**
+ * @file assets/common/common.css
+ * @description 全站基础样式：布局、卡片、统计、表格、徽标、按钮、图片放大预览与错误页
+ * @author AI
+ * @version 0.6
+ * @date 2026-10-08
+ */
+
+:root {
+    --c-primary: #2563eb;
+    --c-primary-dark: #1d4ed8;
+    --c-bg: #f5f7fb;
+    --c-card: #ffffff;
+    --c-border: #e5e9f2;
+    --c-text: #1f2937;
+    --c-text-sub: #6b7280;
+    --c-blue: #2563eb;
+    --c-green: #16a34a;
+    --c-orange: #f59e0b;
+    --c-red: #dc2626;
+    --c-purple: #7c3aed;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 原生 <dialog> 的居中依赖浏览器默认的 margin:auto，会被上面的通配重置清掉，此处显式恢复 */
+dialog { margin: auto; }
+
+/* 可点击元素统一不带下划线，避免与按钮/磁贴等容器化样式冲突 */
+a, a:hover, a:focus, a:active, button, input[type="submit"], input[type="button"] {
+    text-decoration: none;
+}
+
+img { max-width: 100%; height: auto; }
+
+body {
+    font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    background: var(--c-bg);
+    color: var(--c-text);
+    min-height: 100vh;
+}
+
+/* ── 顶栏 ─────────────────────────────── */
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 56px;
+    padding: 0 24px;
+    background: var(--c-card);
+    border-bottom: 1px solid var(--c-border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar__brand {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--c-primary);
+    flex: none;
+    white-space: nowrap;
+}
+.topbar__nav { display: flex; gap: 4px; flex: 1; min-width: 0; overflow-x: auto; }
+.topbar__link {
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: var(--c-text-sub);
+    text-decoration: none;
+    font-size: 15px;
+    flex: none;
+    white-space: nowrap;
+}
+.topbar__link:hover { background: var(--c-bg); color: var(--c-text); }
+.topbar__link.is-active { background: rgba(37, 99, 235, 0.1); color: var(--c-primary); font-weight: 600; }
+.topbar__version { font-size: 13px; color: var(--c-text-sub); }
+
+/* ── 布局容器 ─────────────────────────── */
+.container { max-width: 1280px; margin: 0 auto; padding: 24px; }
+
+/* ── 首屏与徽标 ───────────────────────── */
+.hero { padding: 8px 0 24px; }
+.hero h1 { font-size: 28px; }
+.hero__sub { color: var(--c-text-sub); margin-top: 6px; }
+.hero__meta { display: flex; gap: 8px; margin-top: 12px; }
+
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+/* ── 状态徽标配色：视图用到的变体必须全部有定义，否则会退化成纯文字 ── */
+.badge--blue    { background: rgba(37, 99, 235, 0.12);  color: var(--c-blue); }
+.badge--green   { background: rgba(22, 163, 74, 0.12);  color: var(--c-green); }
+.badge--emerald { background: rgba(5, 150, 105, 0.14);  color: #047857; }
+.badge--teal    { background: rgba(13, 148, 136, 0.14); color: #0f766e; }
+.badge--orange  { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+.badge--amber   { background: rgba(217, 119, 6, 0.14);  color: #b45309; }
+.badge--red     { background: rgba(220, 38, 38, 0.12);  color: var(--c-red); }
+.badge--rose    { background: rgba(225, 29, 72, 0.12);  color: #be123c; }
+.badge--purple  { background: rgba(124, 58, 237, 0.12); color: var(--c-purple); }
+.badge--violet  { background: rgba(139, 92, 246, 0.16); color: #6d28d9; }
+.badge--indigo  { background: rgba(79, 70, 229, 0.14);  color: #4338ca; }
+.badge--cyan    { background: rgba(8, 145, 178, 0.13);  color: #0e7490; }
+.badge--sky     { background: rgba(2, 132, 199, 0.13);  color: #0369a1; }
+.badge--fuchsia { background: rgba(192, 38, 211, 0.12); color: #a21caf; }
+.badge--gray    { background: #eef1f6; color: var(--c-text-sub); }
+
+/* ── 卡片 ─────────────────────────────── */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 16px 0; }
+.card-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12); transform: translateY(-2px); }
+.card__icon { font-size: 30px; }
+.card__title { font-size: 17px; }
+.card__desc { font-size: 14px; color: var(--c-text-sub); flex: 1; }
+.card__footer { display: flex; align-items: center; justify-content: space-between; }
+
+/* ── 统计卡 ───────────────────────────── */
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 8px 0 16px; }
+.stat-card {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 4px solid var(--c-border);
+}
+.stat-card--blue   { border-left-color: var(--c-blue); }
+.stat-card--green  { border-left-color: var(--c-green); }
+.stat-card--orange { border-left-color: var(--c-orange); }
+.stat-card--red    { border-left-color: var(--c-red); }
+.stat-card--purple { border-left-color: var(--c-purple); }
+.stat-card__value { font-size: 28px; font-weight: 700; }
+.stat-card__label { font-size: 14px; color: var(--c-text-sub); }
+
+/* ── 面板与表格 ───────────────────────── */
+.panel {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin: 16px 0;
+}
+.panel__title { font-size: 17px; margin-bottom: 14px; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.table th, .table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--c-border); }
+.table th { color: var(--c-text-sub); font-weight: 600; background: #fafbfd; }
+.table tr:last-child td { border-bottom: none; }
+
+/* 列数多或含长编号的表格在自身容器内横向滚动，不撑破外层卡片边框，也不卷入分页器 */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* 单元格内长串换行，减少不必要的横向滚动 */
+.table th, .table td { overflow-wrap: break-word; }
+
+/* 长单词/长串在卡片内换行，避免撑破容器 */
+.panel, .card, .tile, .auth-card, .notify { overflow-wrap: break-word; }
+
+/* ── 按钮（全局圆角 + 按压反馈 + 波纹容器）── */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.12s, box-shadow 0.18s;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.btn:active { transform: translateY(1px) scale(0.98); }
+.btn--primary { background: var(--c-primary); color: #fff; }
+.btn--primary:hover { background: var(--c-primary-dark); }
+.btn--ghost { background: transparent; color: var(--c-primary); border: 1px solid var(--c-primary); }
+.btn--ghost:hover { background: rgba(37, 99, 235, 0.08); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── 空状态与错误页 ───────────────────── */
+.empty-state {
+    padding: 28px;
+    text-align: center;
+    color: var(--c-text-sub);
+    background: var(--c-card);
+    border: 1px dashed var(--c-border);
+    border-radius: var(--radius);
+    margin: 16px 0;
+    font-size: 15px;
+}
+
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.error-page__code { font-size: 78px; color: var(--c-primary); }
+.error-page__text { color: var(--c-text-sub); }
+.error-page__detail {
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 16px;
+    max-width: 720px;
+    overflow: auto;
+    font-size: 13px;
+    color: var(--c-red);
+}
+
+/* ── 全局通知（规范 §3）────────────────── */
+.notify-root {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 280px;
+    max-width: 90vw;
+}
+
+/* 作为 popover 进入 top layer 后，重置浏览器默认的居中定位，保持右上角堆叠 */
+.notify-root[popover] {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    overflow: visible;
+}
+
+.notify {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: var(--c-card);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.16);
+    border-left: 4px solid var(--c-border);
+    opacity: 0;
+    transform: translateX(24px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+.notify.is-in { opacity: 1; transform: translateX(0); }
+.notify--leaving { opacity: 0; transform: translateX(24px); }
+
+.notify__icon {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.notify__icon--spin { animation: notify-spin 0.9s linear infinite; }
+@keyframes notify-spin { to { transform: rotate(360deg); } }
+
+.notify__text { flex: 1; font-size: 15px; line-height: 1.5; }
+.notify__close {
+    flex: none;
+    border: none;
+    background: transparent;
+    color: var(--c-text-sub);
+    font-size: 17px;
+    cursor: pointer;
+    line-height: 1;
+}
+.notify__close:hover { color: var(--c-text); }
+
+.notify--success { border-left-color: var(--c-green); }
+.notify--success .notify__icon { background: var(--c-green); }
+.notify--error   { border-left-color: var(--c-red); }
+.notify--error .notify__icon { background: var(--c-red); }
+.notify--warning { border-left-color: var(--c-orange); }
+.notify--warning .notify__icon { background: var(--c-orange); }
+.notify--info    { border-left-color: var(--c-blue); }
+.notify--info .notify__icon { background: var(--c-blue); }
+.notify--loading { border-left-color: var(--c-primary); }
+.notify--loading .notify__icon { background: var(--c-primary); }
+
+/* ── 确认弹窗（规范 §4）────────────────── */
+/* 用原生 <dialog> 实现：原生模态弹窗由浏览器放入 top layer，
+   层级高于页面上任何 z-index 元素，确保能盖住调用方自己的弹窗 */
+.confirm-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+}
+.confirm-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+
+.confirm-box {
+    width: min(560px, calc(100vw - 32px));
+    background: var(--c-card);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(15, 23, 42, 0.24);
+    overflow: hidden;
+    animation: confirm-pop 0.18s ease-out;
+}
+@keyframes confirm-pop {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.confirm-box__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 20px 0;
+}
+.confirm-box__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--c-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+.confirm-box__icon--danger { background: rgba(220, 38, 38, 0.12); color: var(--c-red); }
+.confirm-box__title { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.confirm-box__level {
+    font-style: normal;
+    font-size: 12px;
+    color: var(--c-text-sub);
+    background: #eef1f6;
+    border-radius: 4px;
+    padding: 1px 6px;
+}
+
+.confirm-box__body { padding: 14px 20px 4px; }
+.confirm-box__message { font-size: 15px; color: var(--c-text); line-height: 1.7; }
+.confirm-box__check { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 14px; color: var(--c-text); cursor: pointer; }
+.confirm-box__typing-hint { margin: 12px 0 6px; font-size: 14px; color: var(--c-text-sub); }
+.confirm-box__typing-hint b { color: var(--c-red); }
+.confirm-box__typing {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+.confirm-box__typing:focus { border-color: var(--c-primary); }
+
+.confirm-box__foot {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 18px 20px;
+}
+
+.btn--danger { background: var(--c-red); color: #fff; }
+.btn--danger:hover { background: #b91c1c; }
+
+/* ── 认证页与表单 ─────────────────────── */
+/* ── 登录页外壳：左右分栏铺满整屏（左品牌区 + 右表单区，各端共用）── */
+.auth-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    flex: 1;
+    width: 100%;
+    min-height: 78vh;
+}
+
+/* 左侧品牌区：渐变底 + 装饰光斑 */
+.auth-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 64px 60px;
+    color: #e0e7ff;
+    background: linear-gradient(150deg, #1e1b4b 0%, #4338ca 48%, #7c3aed 100%);
+}
+.auth-hero::before,
+.auth-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+.auth-hero::before { width: 420px; height: 420px; right: -140px; top: -120px; }
+.auth-hero::after { width: 300px; height: 300px; left: -110px; bottom: -130px; }
+.auth-hero > * { position: relative; z-index: 1; }
+
+.auth-hero__brand { display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+.auth-hero__logo {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+.auth-hero__tag {
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: #fff;
+}
+.auth-hero__title { font-size: 36px; font-weight: 800; color: #fff; line-height: 1.3; letter-spacing: 0.5px; margin-top: 10px; }
+.auth-hero__desc { font-size: 15px; line-height: 1.9; color: rgba(224, 231, 255, 0.86); max-width: 540px; }
+.auth-hero__list { list-style: none; display: grid; gap: 13px; margin-top: 6px; }
+.auth-hero__list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: rgba(224, 231, 255, 0.94);
+}
+.auth-hero__list li::before {
+    content: "✓";
+    flex: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+.auth-hero__foot { margin-top: 22px; font-size: 13px; color: rgba(224, 231, 255, 0.6); }
+
+/* 右侧表单区：白底，内容居中 */
+.auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 44px;
+    background: var(--c-card);
+}
+
+/* 表单内容容器（放大规格作用于其后代） */
+.auth-card { width: min(420px, 100%); }
+
+/* 图标标识：给表单一个视觉锚点，居中显示 */
+.auth-mark {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    box-shadow: 0 10px 22px rgba(99, 102, 241, 0.30);
+    margin: 0 auto 20px;
+}
+.auth-card__title { font-size: 28px; font-weight: 700; letter-spacing: 0.5px; text-align: center; }
+.auth-card__sub { font-size: 15px; color: var(--c-text-sub); margin: 10px 0 32px; line-height: 1.7; text-align: center; }
+/* 账号被后台停用等会话失效原因提示：出现在登录表单上方，用警示色与表单区分 */
+.auth-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 12px 14px;
+    border: 1px solid rgba(220, 38, 38, 0.28);
+    border-radius: 10px;
+    background: rgba(220, 38, 38, 0.06);
+    color: var(--c-red);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ── 醒目提示条：页面级重要告知（如充值前提醒），比 form-hint 更显眼 ── */
+.notice-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    border-left: 4px solid var(--c-orange);
+    border-radius: 10px;
+    background: rgba(245, 158, 11, 0.1);
+    color: #b45309;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+.notice-bar__icon { font-size: 17px; line-height: 1.5; }
+
+/* ── 识别码展示：需用户照抄或复制到面单/收货地址，字号与对比度都要够 ── */
+.code-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 10px 14px;
+    border: 1px dashed rgba(37, 99, 235, 0.4);
+    border-radius: 10px;
+    background: rgba(37, 99, 235, 0.06);
+}
+.code-badge__label { font-size: 13px; color: var(--c-text-sub); }
+.code-badge__value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--c-primary);
+}
+
+/* 表单控件放大（仅限认证卡片，后台页面的紧凑筛选栏不受影响） */
+.auth-card .form-field { margin-bottom: 20px; }
+.auth-card .form-label { font-size: 15px; color: var(--c-text); font-weight: 600; margin-bottom: 8px; }
+.auth-card .form-input {
+    height: 52px;
+    padding: 0 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    border-width: 1.5px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.auth-card .form-input:focus {
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+.auth-card textarea.form-input { height: auto; padding: 14px 16px; }
+.auth-card .captcha-row .form-input { height: 52px; }
+.auth-card .captcha-img { width: 132px; height: 52px; border-radius: 12px; }
+.auth-card .btn {
+    height: 54px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    border-radius: 12px;
+}
+.auth-card__foot {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--c-border);
+    font-size: 15px;
+    color: var(--c-text-sub);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.auth-card__foot a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border: 1px solid var(--c-border);
+    border-radius: 999px;
+    background: var(--c-card);
+    color: var(--c-primary);
+    font-weight: 600;
+    line-height: 1.4;
+    transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.12s;
+}
+.auth-card__foot a:hover { background: rgba(37, 99, 235, 0.08); border-color: var(--c-primary); }
+.auth-card__foot a:active { transform: translateY(1px); }
+
+/* 登录按钮区：辅助链接置于按钮上方右侧 */
+.auth-actions { display: flex; flex-direction: column; gap: 12px; }
+.auth-link-mini {
+    align-self: flex-end;
+    font-size: 15px;
+    color: var(--c-text-sub);
+    transition: color 0.18s;
+}
+.auth-link-mini:hover { color: var(--c-primary); }
+
+/* 小屏（手机 / PDA）：改为上下堆叠，品牌区收窄，保证表单首屏可见可操作 */
+@media (max-width: 900px) {
+    .auth-split { grid-template-columns: 1fr; min-height: auto; }
+    .auth-hero { padding: 34px 24px; gap: 12px; }
+    .auth-hero__title { font-size: 25px; margin-top: 4px; }
+    .auth-hero__desc { font-size: 14px; line-height: 1.8; }
+    .auth-hero__list, .auth-hero__foot { display: none; }
+    .auth-panel { padding: 30px 20px 40px; }
+    .auth-card__title { font-size: 23px; }
+    .auth-card__sub { font-size: 14px; margin-bottom: 22px; }
+    .auth-card .form-field { margin-bottom: 16px; }
+    .auth-card .form-input { height: 48px; font-size: 16px; }
+    .auth-card .btn { height: 50px; font-size: 16px; letter-spacing: 2px; }
+    .auth-mark { width: 46px; height: 46px; font-size: 23px; margin-bottom: 16px; }
+}
+
+/* ── 后台认证页外壳（管理端/仓库端登录共用）── */
+/* 登录页外壳全端统一：只保留一套样式，避免各端登录观感不一致 */
+.back-auth {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f6f8ff 0%, #ffffff 100%);
+}
+.back-auth__main {
+    /* 分栏外壳自行铺满，这里不再居中与留白 */
+    flex: 1;
+    display: flex;
+}
+
+.back-topbar {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 24px;
+}
+.back-topbar__brand { display: flex; align-items: center; gap: 10px; }
+.back-topbar__logo {
+    width: 34px;
+    height: 34px;
+    flex: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4f46e5, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+.back-topbar__name { font-size: 16px; font-weight: 800; color: var(--c-text); }
+.back-topbar__product {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(79, 70, 229, 0.12);
+    color: #4f46e5;
+}
+.back-topbar__link { font-size: 14px; color: var(--c-text-sub); transition: color 0.18s; }
+.back-topbar__link:hover { color: var(--c-primary); }
+
+/* ── 图形验证码 ───────────────────────── */
+.captcha-row { display: flex; align-items: center; gap: 10px; }
+.captcha-row .form-input { flex: 1; min-width: 0; letter-spacing: 3px; }
+.captcha-row .btn { flex: none; white-space: nowrap; }
+.captcha-img {
+    flex: none;
+    width: 122px;
+    height: 42px;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    transition: border-color 0.18s, transform 0.12s;
+}
+.captcha-img:hover { border-color: var(--c-primary); }
+.captcha-img:active { transform: scale(0.97); }
+
+.form-field { margin-bottom: 16px; }
+.form-label { display: block; font-size: 14px; color: var(--c-text-sub); margin-bottom: 6px; }
+.form-optional { color: var(--c-border); }
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 20px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+.form-input:focus { border-color: var(--c-primary); }
+/* 只读输入框呈现明确的不可编辑态（用户编号/识别码/格式展示等），与可编辑框区分 */
+.form-input[readonly] { background: var(--c-bg); color: var(--c-text-sub); cursor: not-allowed; }
+.form-hint { font-size: 13px; color: var(--c-text-sub); margin-top: 4px; }
+
+/* 按钮尺寸标准（两档，勿混用）：
+   ① 标题行/工具区的主操作按钮 → 用 .btn 默认尺寸（如物流渠道「新建渠道」）
+   ② 表格行内、弹窗内的次要按钮 → 用 .btn--sm
+   新增按钮时按此选择，避免同类按钮大小不一 */
+.btn--sm { padding: 5px 12px; font-size: 14px; }
+.btn--block { width: 100%; }
+
+.form-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.form-row > .form-field { flex: 1 1 140px; min-width: 0; margin-bottom: 0; }
+.form-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 10px; }
+@media (max-width: 700px) { .form-row-3 { grid-template-columns: 1fr; } }
+
+/* ── 用户端欢迎面板 ───────────────────── */
+.panel--greet { margin-top: 8px; }
+.greet { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.greet__name { font-size: 20px; }
+.greet__meta { font-size: 14px; color: var(--c-text-sub); margin-top: 4px; }
+.greet__code { text-align: right; }
+.greet__code-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--c-primary);
+    margin-top: 2px;
+}
+
+/* ── 消息中心（用户端）────────────────── */
+.msg-list { list-style: none; }
+.msg-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--c-border);
+    border-radius: 10px;
+    transition: background 0.18s;
+}
+.msg-item:hover { background: #f8fafc; }
+.msg-item:last-child { border-bottom: none; }
+.msg-item.is-unread { background: rgba(37, 99, 235, 0.05); }
+.msg-item.is-unread:hover { background: rgba(37, 99, 235, 0.09); }
+.msg-item__icon {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    border-radius: 11px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.msg-item__main { flex: 1; min-width: 0; }
+.msg-item__head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.msg-item__title { font-size: 16px; font-weight: 700; color: var(--c-text); overflow-wrap: break-word; }
+.msg-item__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c-red);
+    flex: none;
+}
+.msg-item__body {
+    font-size: 14px;
+    color: var(--c-text-sub);
+    line-height: 1.75;
+    margin-top: 6px;
+    overflow-wrap: break-word;
+}
+.msg-item__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+}
+.msg-item__time { font-size: 13px; color: var(--c-text-sub); }
+.msg-item__read { font-size: 13px; color: var(--c-border); }
+
+/* ── 工单对话：按回复方配色（用户=灰蓝，客服=蓝，本人一侧加重） ── */
+.msg-list--thread .msg-item {
+    border-left: 3px solid transparent;
+}
+.msg-item--user {
+    background: #f8fafc;
+    border-left-color: #94a3b8;
+}
+.msg-item--staff {
+    background: #eff6ff;
+    border-left-color: #3b82f6;
+}
+.msg-item--user .msg-item__icon { background: #e2e8f0; }
+.msg-item--staff .msg-item__icon { background: #dbeafe; }
+.msg-list--thread .msg-item.is-mine { box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.25); }
+.msg-list--thread .msg-item.is-mine .msg-item__title { color: #4f46e5; }
+
+/* ── 详情信息行（各端通用；官网由 site.css 覆盖为站点风格） ── */
+.hero-address {
+    border: 1px dashed #c7d2fe;
+    border-radius: 14px;
+    padding: 16px;
+    background: linear-gradient(180deg, #f8faff, #ffffff);
+}
+.hero-address__label { font-size: 13px; color: var(--c-text-sub); display: block; margin-bottom: 10px; }
+.hero-address__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    padding: 7px 0;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.35);
+}
+.hero-address__row:last-child { border-bottom: none; }
+.hero-address__row span { color: var(--c-text-sub); flex: none; }
+/* 取值默认着色，避免整块只有黑色加粗文字；语义类进一步区分金额/单号/数量/未填 */
+.hero-address__row b { text-align: right; overflow-wrap: break-word; color: var(--c-primary-dark); font-weight: 600; }
+.hero-address__row b.v-money { color: #047857; }
+.hero-address__row b.v-code  { color: #6d28d9; letter-spacing: 0.3px; }
+.hero-address__row b.v-count { color: #0e7490; }
+.hero-address__row b.v-measure { color: #0369a1; }
+.hero-address__row b.v-muted { color: #94a3b8; font-weight: 500; }
+.hero-address__code { color: var(--c-purple); letter-spacing: 2px; }
+
+/* ── 支付状态行：等待中 / 已成功 / 已关闭 ── */
+.pay-status {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; margin-bottom: 14px;
+    border-radius: 10px; font-size: 13px; line-height: 1.7;
+}
+.pay-status__dot {
+    flex: none; width: 8px; height: 8px; border-radius: 50%; background: currentColor;
+}
+.pay-status--wait { background: #fff7ed; color: #b45309; }
+.pay-status--wait .pay-status__dot { animation: pay-pulse 1.2s ease-in-out infinite; }
+.pay-status--ok { background: #ecfdf5; color: #047857; }
+.pay-status--bad { background: #fef2f2; color: #b91c1c; }
+.pay-status--bad .pay-status__dot { animation: none; }
+@keyframes pay-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+/* ── 图片放大预览：页面内弹层看图，替代新窗口打开 ── */
+.zoomable { cursor: zoom-in; }
+.img-preview {
+    border: 0;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    background: transparent;
+    overflow: visible;
+}
+.img-preview::backdrop { background: rgba(15, 23, 42, 0.72); }
+.img-preview img {
+    display: block;
+    max-width: min(92vw, 1400px);
+    max-height: 86vh;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.42);
+}
+.img-preview__close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.94);
+    color: #0f172a;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+}
+.img-preview__close:hover { background: #fff; }
+
+/* ── 响应式：≥1280 桌面优先，小屏退化为单列 ── */
+@media (max-width: 960px) {
+    .card-grid, .card-grid--4, .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .card-grid, .card-grid--4, .stat-grid { grid-template-columns: 1fr; }
+    .topbar { padding: 0 12px; gap: 12px; }
+    .container { padding: 12px; }
+}

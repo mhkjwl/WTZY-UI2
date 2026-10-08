@@ -1,0 +1,145 @@
+/**
+ * @file assets/common/rates.css
+ * @description 转运资费页专属样式（仅该页引用；沿用首页设计变量，卡片直接复用 .tool-card / .value-item）
+ * @author AI
+ * @version 0.6
+ * @date 2026-09-14
+ */
+
+/* ── 首屏：首页的 #header 是透明无底色的，靠首屏深色衬托白色导航 ──
+   故本页首屏必须自带深色背景，否则白字导航会消失在白底上
+   渐变与点阵纹理取自首页 .hero，保持同一视觉基调 */
+.rate-hero {
+    position: relative;
+    background:
+        radial-gradient(1100px 620px at 82% -10%, rgba(99, 102, 241, .4), transparent 62%),
+        radial-gradient(900px 540px at -12% 42%, rgba(56, 189, 248, .24), transparent 58%),
+        radial-gradient(700px 500px at 55% 110%, rgba(168, 85, 247, .18), transparent 60%),
+        linear-gradient(180deg, #070D1F 0%, #0B1739 55%, #0D1E4C 100%);
+    color: #fff;
+    padding: 190px 0 100px;
+    overflow: hidden;
+}
+.rate-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, .13) 1px, transparent 1px);
+    background-size: 30px 30px;
+    -webkit-mask-image: radial-gradient(700px 480px at 30% 35%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(700px 480px at 30% 35%, #000 0%, transparent 75%);
+    pointer-events: none;
+}
+.rate-hero .sec-title { color: #fff; }
+.rate-hero .sec-sub { color: #A9B6D6; }
+.rate-hero .eyebrow { background: rgba(255, 255, 255, .1); color: var(--sky-400); }
+
+/* ── 仓库分组卡：在 .tool-card 基础上补充标题行 ───────── */
+.rate-card { padding: 30px 32px; margin-bottom: 26px; }
+.rate-card:last-child { margin-bottom: 0; }
+
+.rate-card__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.rate-card__head h3 { font-size: 20px; font-weight: 800; color: var(--ink); }
+.rate-card__count {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--indigo-500);
+    background: rgba(99, 102, 241, .1);
+    border-radius: 999px;
+    padding: 4px 12px;
+}
+
+/* ── 线路资费表：首页原设计无表格，此表按首页设计语言定制 ── */
+.rate-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.rate-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.rate-table th {
+    text-align: left;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--muted);
+    padding: 0 16px 12px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+.rate-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    vertical-align: middle;
+}
+.rate-table tbody tr:last-child td { border-bottom: none; }
+.rate-table tbody tr { transition: background .25s; }
+.rate-table tbody tr:hover { background: var(--bg-soft); }
+.rate-table .rt-name { font-weight: 800; color: var(--ink); }
+.rate-table .rt-fee {
+    font-family: var(--font-latin);
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+}
+.rate-table .rt-fee em {
+    font-style: normal;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-left: 4px;
+}
+
+/* 平均时效：用胶囊标签呈现，与首页的 chip 观感一致 */
+.rate-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(56, 189, 248, .12);
+    color: #0e7490;
+    white-space: nowrap;
+}
+.rate-tag--plain { background: var(--bg-soft); color: var(--muted); }
+
+/* ── 增值服务：复用首页 value-item，价格用金色徽标 ────── */
+.rate-svc { position: relative; }
+.rate-svc__price {
+    font-family: var(--font-latin);
+    font-weight: 800;
+    font-size: 13px;
+    color: #b45309;
+    background: rgba(245, 158, 11, .14);
+    border-radius: 999px;
+    padding: 3px 11px;
+    margin-left: auto;
+    flex: none;
+    align-self: flex-start;
+}
+.rate-svc .vt { flex: 1; }
+
+/* ── 汇总统计：深色区用首页的 stat-card，标签改中文尺寸 ──
+   首页 .stats-grid 为 4 列，本页只有 3 张卡，改为 3 列避免末列空缺导致内容偏左 */
+.rate-stats { grid-template-columns: repeat(3, 1fr); }
+.rate-stats .stat-card b { font-size: 38px; }
+.rate-stats .stat-card p { font-size: 14px; }
+
+/* ── 说明脚注 ─────────────────────────────────────────── */
+.rate-note {
+    margin-top: 26px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+@media (max-width: 900px) {
+    .rate-card { padding: 24px 20px; }
+    .rate-table th, .rate-table td { padding-left: 10px; padding-right: 10px; }
+    .rate-stats { grid-template-columns: 1fr; }
+}

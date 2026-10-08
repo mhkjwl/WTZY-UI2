@@ -1,0 +1,56 @@
+# ============================================================
+# WTZY 全球转运 · Nginx 参考配置
+# 用法一（宝塔）：站点 → 设置 → 伪静态，粘贴下方「伪静态片段」即可
+# 用法二（自管 Nginx）：参考完整 server 块，按实际环境调整
+# 关键点：root 必须指向 public 目录，其余 app/ config/ install/ 等目录
+#        位于站点根目录之外，天然禁止 HTTP 访问
+# ============================================================
+
+# ---------- 伪静态片段（宝塔「伪静态」输入框直接粘贴） ----------
+# location / {
+#     try_files $uri $uri/ /index.php?$query_string;
+# }
+# location ~ /\. {
+#     deny all;
+# }
+
+# ---------- 完整 server 块示例 ----------
+server {
+    listen 80;
+    server_name ddgjj.dpdns.org;
+
+    # 必须指向 public 目录（仅此目录可公开访问）
+    root /www/wwwroot/ddgjj.dpdns.org/public;
+    index index.php index.html;
+
+    # 伪静态：物理不存在的路径一律转发前端控制器（含 /install/ 安装向导）
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # PHP 8.5（宝塔默认 unix socket 路径，按面板实际名称调整；
+    # 若使用 tcp 方式改为 fastcgi_pass 127.0.0.1:9000;）
+    location ~ [^/]\.php(/|$) {
+        try_files $uri =404;
+        fastcgi_pass unix:/tmp/php-cgi-85.sock;
+        fastcgi_index index.php;
+        include fastcgi.conf;
+    }
+
+    # 安全：拒绝隐藏文件（.env / .git 等）
+    location ~ /\. {
+        deny all;
+    }
+
+    # 安全：拒绝运行时目录（storage 在站点根目录下，不在 public 内，双保险）
+    location ~* ^/(storage|logs)/ {
+        deny all;
+    }
+
+    # 上传目录：仅允许静态访问，禁止执行 PHP（可选加固）
+    location ~* ^/uploads/.*\.php$ {
+        deny all;
+    }
+
+    access_log /www/wwwlogs/ddgjj.dpdns.org.log;
+}
