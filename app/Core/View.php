@@ -3,7 +3,7 @@
  * @file app/Core/View.php
  * @description 视图渲染：模板取值 + 公共布局包裹 + HTML 输出转义助手
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-10-08
  */
 

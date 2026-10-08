@@ -3,7 +3,7 @@
  * @file app/Views/member/recharge.php
  * @description 会员中心：余额充值（档位选择 → 在线支付/人工入账 → 扫码或跳转 → 实时监测入账 → 在线支付超时自动关闭，人工入账不受时效限制）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

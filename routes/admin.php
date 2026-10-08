@@ -3,8 +3,8 @@
  * @file routes/admin.php
  * @description 管理端路由（运营/客服/财务/管理员；各模块写操作均挂独立权限点）
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Controllers\Admin\AuthController;
@@ -130,6 +130,7 @@ return static function (Router $router): void {
     // 系统设置
     $router->get('/admin/system/site', [SystemController::class, 'site']);
     $router->post('/admin/system/site/save', [SystemController::class, 'saveSite']);
+    $router->post('/admin/system/site/upload', [SystemController::class, 'uploadBrand']);
     $router->get('/admin/system/mail', [SystemController::class, 'mail']);
     $router->post('/admin/system/mail/save', [SystemController::class, 'saveMail']);
     $router->post('/admin/system/mail/test', [SystemController::class, 'testMail']);

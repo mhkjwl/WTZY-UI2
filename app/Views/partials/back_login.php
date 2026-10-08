@@ -3,8 +3,8 @@
  * @file app/Views/partials/back_login.php
  * @description 后台类登录页（管理端 / 仓库端共用同一份结构与样式，仅端名与文案不同）
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -17,6 +17,7 @@ use App\Core\View;
  * @var string $accountLabel 账号输入框标签
  * @var string $accountField 账号字段名（提交给接口的参数名）
  * @var string $mark        表单图标
+ * @var string $captchaScene 验证码场景标识（管理端 / 仓库端各用独立槽位）
  * @var string $heroTag     左侧品牌标签
  * @var string $heroTitle   左侧主标题
  * @var string $heroDesc    左侧说明
@@ -29,6 +30,7 @@ $sub = $sub ?? '';
 $accountLabel = $accountLabel ?? '账号';
 $accountField = $accountField ?? 'username';
 $mark = $mark ?? '🌍';
+$captchaScene = $captchaScene ?? 'login';
 
 ob_start();
 ?>
@@ -43,8 +45,9 @@ ob_start();
         <input class="form-control" type="password" id="password" name="password"
                autocomplete="current-password" required>
     </div>
+    <?= View::partial('user/captcha_field', ['scene' => $captchaScene]) ?>
     <div class="d-grid">
-        <button class="btn btn-primary" type="submit" id="login-btn">登 录</button>
+        <button class="btn btn--primary" type="submit" id="login-btn">登 录</button>
     </div>
 </form>
 
@@ -55,7 +58,11 @@ ob_start();
         e.preventDefault();
         var btn = document.getElementById('login-btn');
         var accountField = '<?= View::e($accountField) ?>';
-        var payload = { password: document.getElementById('password').value };
+        var captchaScene = '<?= View::e($captchaScene) ?>';
+        var payload = {
+            password: document.getElementById('password').value,
+            captcha: document.getElementById('captcha-' + captchaScene).value.trim()
+        };
         payload[accountField] = document.getElementById('account-input').value.trim();
 
         btn.disabled = true;
@@ -66,10 +73,13 @@ ob_start();
                 return;
             }
             Notify.error(res.message || '登录失败');
+            // 验证码一次性使用，失败后必须换一张再提交
+            refreshCaptcha(captchaScene);
             btn.disabled = false;
             btn.textContent = '登 录';
         }).catch(function () {
             Notify.error('网络异常，请稍后重试');
+            refreshCaptcha(captchaScene);
             btn.disabled = false;
             btn.textContent = '登 录';
         });

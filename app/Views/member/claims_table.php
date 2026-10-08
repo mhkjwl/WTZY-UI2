@@ -3,7 +3,7 @@
  * @file app/Views/member/claims_table.php
  * @description 理赔列表局部渲染
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

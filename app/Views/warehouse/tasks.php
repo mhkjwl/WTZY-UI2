@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/tasks.php
  * @description 任务分配：主管指派作业给操作员并跟踪完成情况
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

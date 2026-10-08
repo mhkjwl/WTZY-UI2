@@ -4,7 +4,7 @@
  * @file config/app.php
  * @description 应用基础配置（站点名/调试开关等，敏感项一律走 .env）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

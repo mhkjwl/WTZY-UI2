@@ -3,7 +3,7 @@
  * @file app/Views/admin/invoices.php
  * @description 发票管理页：开票功能开关与开票申请局部区
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

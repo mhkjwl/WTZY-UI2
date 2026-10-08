@@ -3,14 +3,15 @@
  * @file app/Models/FundFlowModel.php
  * @description 资金流水与账户余额变动（唯一账本入口：余额只允许经此模型流水化变更）
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Models;
 
 use App\Core\Database;
 use PDO;
+use PDOException;
 use RuntimeException;
 use Throwable;
 
@@ -65,12 +66,22 @@ final class FundFlowModel
                  (flow_no, user_id, flow_type, direction, amount, balance_before, balance_after, biz_type, biz_no, operator_id, remark)
                  VALUES (:no, :uid, :type, :dir, :amount, :before, :after, :biz_type, :biz_no, :oid, :remark)'
             );
-            $ins->execute([
-                ':no' => 'FF' . date('YmdHis') . str_pad((string) random_int(0, 9999), 4, '0', STR_PAD_LEFT),
-                ':uid' => $userId, ':type' => $flowType, ':dir' => $direction, ':amount' => $amount,
-                ':before' => $before, ':after' => $after, ':biz_type' => $bizType, ':biz_no' => $bizNo,
-                ':oid' => $operatorId, ':remark' => $remark,
-            ]);
+            // 流水号 = 秒级时间 + 4 位随机尾号；同一秒内极小概率撞号，由唯一索引兜底并换号重试
+            for ($attempt = 1; ; $attempt++) {
+                try {
+                    $ins->execute([
+                        ':no' => 'FF' . date('YmdHis') . str_pad((string) random_int(0, 9999), 4, '0', STR_PAD_LEFT),
+                        ':uid' => $userId, ':type' => $flowType, ':dir' => $direction, ':amount' => $amount,
+                        ':before' => $before, ':after' => $after, ':biz_type' => $bizType, ':biz_no' => $bizNo,
+                        ':oid' => $operatorId, ':remark' => $remark,
+                    ]);
+                    break;
+                } catch (PDOException $e) {
+                    if ($attempt >= 3 || (int) ($e->errorInfo[1] ?? 0) !== 1062) {
+                        throw $e;
+                    }
+                }
+            }
             if ($ownTransaction) {
                 $pdo->commit();
             }

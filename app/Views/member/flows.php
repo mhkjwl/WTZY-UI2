@@ -3,7 +3,7 @@
  * @file app/Views/member/flows.php
  * @description 会员中心：资金流水（按类型筛选 + 局部表）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

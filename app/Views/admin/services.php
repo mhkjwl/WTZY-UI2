@@ -3,7 +3,7 @@
  * @file app/Views/admin/services.php
  * @description 增值服务设置页：下单页可勾选增值服务的增删改与启停
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/web/rates.php
  * @description 前台转运资费页（沿用官网首页的页头/页脚外壳与设计语言）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

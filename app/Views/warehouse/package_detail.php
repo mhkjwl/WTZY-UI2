@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/package_detail.php
  * @description 仓库端包裹详情：信息/计量/照片/异常记录 + 上架移库下架登记异常 + 补录照片（局部刷新）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

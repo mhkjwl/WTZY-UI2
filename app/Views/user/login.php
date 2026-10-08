@@ -3,8 +3,8 @@
  * @file app/Views/user/login.php
  * @description 用户端登录页
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -34,7 +34,7 @@ ob_start();
             <a class="small" href="/user/forgot">忘记密码？</a>
         </div>
         <div class="d-grid">
-            <button class="btn btn-primary" type="submit" id="login-btn">登 录</button>
+            <button class="btn btn--primary" type="submit" id="login-btn">登 录</button>
         </div>
     </form>
     <div class="ly-auth__foot-links">

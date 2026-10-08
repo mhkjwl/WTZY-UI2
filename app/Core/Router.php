@@ -3,7 +3,7 @@
  * @file app/Core/Router.php
  * @description 轻量路由器：精确路径 + {param} 占位符，按 [控制器类, 方法] 分发
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

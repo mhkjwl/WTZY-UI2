@@ -3,7 +3,7 @@
  * @file app/Models/WarehouseModel.php
  * @description 仓库与库位数据访问
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

@@ -3,11 +3,12 @@
  * @file app/Views/partials/home_footer.php
  * @description 官网外壳共用：页脚（品牌/联系方式/备案/订阅）与浮动按钮
  * @author AI
- * @version 0.6
- * @date 2026-09-13
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 $brand = $brand ?? SiteChrome::brand();
@@ -19,7 +20,11 @@ $contact = $contact ?? SiteChrome::contact();
     <div class="ft-top">
       <div class="ft-brand">
         <a class="logo" href="#home">
+          <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+          <img class="logo-img" src="<?= View::e($brandLogo) ?>" alt="<?= View::e($brand) ?>">
+          <?php else: ?>
           <span class="logo-mark"><svg><use href="#i-globe"/></svg></span>
+          <?php endif; ?>
           <span class="logo-name" style="color:#fff"><?= View::e($brand) ?></span>
         </a>
         <p>国家商务部批准的一级国际货运代理企业，专注国际转运与跨境物流 12 年。以科技驱动供应链，让中国好货通达世界。</p>

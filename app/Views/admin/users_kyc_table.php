@@ -3,7 +3,7 @@
  * @file app/Views/admin/users_kyc_table.php
  * @description 实名审核列表局部渲染（证件材料可查看）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

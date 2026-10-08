@@ -3,7 +3,7 @@
  * @file install/upgrade/schema_upgrade.php
  * @description 增量升级：为已安装的库补齐 schema.sql 中新增的表结构（幂等，可重复执行）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  *
  * 用法：php install/upgrade/schema_upgrade.php

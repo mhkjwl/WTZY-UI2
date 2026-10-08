@@ -3,7 +3,7 @@
  * @file tasks/run.php
  * @description 系统自动任务命令行入口：自动签收 / 待激活积分入账 / 退运销毁兜底退款
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  *
  * 用法：php tasks/run.php all             执行全部任务

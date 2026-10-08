@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/TrackingController.php
  * @description 会员中心：物流跟踪（按运单查询轨迹）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

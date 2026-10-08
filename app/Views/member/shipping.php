@@ -3,8 +3,8 @@
  * @file app/Views/member/shipping.php
  * @description 会员中心：转运目的地收货地址维护
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-09-13
  */
 
 use App\Core\View;

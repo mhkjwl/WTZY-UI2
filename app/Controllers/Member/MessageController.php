@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/MessageController.php
  * @description 会员中心：消息中心（仅本人定向消息）+ 网站公告（全员广播列表与详情）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

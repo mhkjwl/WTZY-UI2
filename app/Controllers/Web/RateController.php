@@ -3,7 +3,7 @@
  * @file app/Controllers/Web/RateController.php
  * @description 前台转运资费页：按仓库分组展示线路资费与增值服务（内容来自后台「转运资费」）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

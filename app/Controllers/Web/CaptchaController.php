@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 /**
  * @file app/Controllers/Web/CaptchaController.php
- * @description 图形验证码输出（SVG，按场景独立存储：login / register / reset）
+ * @description 图形验证码输出（SVG，按场景独立存储：三端登录 login / login_admin / login_warehouse、注册 register、找回密码 reset）
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Web;
@@ -15,7 +15,7 @@ use App\Services\CaptchaService;
 
 final class CaptchaController extends Controller
 {
-    private const SCENES = ['login', 'register', 'reset'];
+    private const SCENES = ['login', 'login_admin', 'login_warehouse', 'register', 'reset'];
 
     public function image(): never
     {

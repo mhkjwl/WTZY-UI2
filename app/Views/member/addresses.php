@@ -3,7 +3,7 @@
  * @file app/Views/member/addresses.php
  * @description 会员中心：海外仓专属收货地址（下单时填写，凭识别码归属包裹）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

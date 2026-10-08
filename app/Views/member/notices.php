@@ -3,7 +3,7 @@
  * @file app/Views/member/notices.php
  * @description 会员中心网站公告页：类型徽标 + 标题 + 日期 + 内容摘要，点击进入详情
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

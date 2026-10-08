@@ -3,7 +3,7 @@
  * @file app/Models/ValueAddedServiceModel.php
  * @description 增值服务字典数据访问（下单页勾选项的唯一来源，后台「增值服务」页维护）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

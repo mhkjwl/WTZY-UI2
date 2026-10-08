@@ -3,8 +3,8 @@
  * @file app/Controllers/Member/ProfileController.php
  * @description 会员中心：个人资料、绑定邮箱、修改密码、实名认证（证件材料上传 + 后台审核）
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Member;
@@ -211,6 +211,8 @@ final class ProfileController extends BaseController
         }
 
         UserModel::updatePassword($this->userId(), password_hash($newPassword, PASSWORD_DEFAULT));
+        // 守卫阶段已提前释放会话锁，重建会话 ID 前先重新打开（本操作低频，短暂持锁可接受）
+        $this->reopenSession();
         session_regenerate_id(true);
         $this->ok(null, '密码修改成功，请牢记新密码');
     }

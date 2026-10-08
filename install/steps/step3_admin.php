@@ -3,7 +3,7 @@
  * @file install/steps/step3_admin.php
  * @description 安装第三步：管理员账户设置（密码哈希后入会话，明文不落盘）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

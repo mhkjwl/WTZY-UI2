@@ -3,7 +3,7 @@
  * @file app/Core/Crypto.php
  * @description 对称加解密（AES-256-GCM，密钥派生自 .env 的 APP_KEY）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  *
  * 用途：需要在后台可维护、但又不能明文入库的敏感配置（如 SMTP 密码）。

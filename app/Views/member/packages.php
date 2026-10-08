@@ -3,7 +3,7 @@
  * @file app/Views/member/packages.php
  * @description 会员中心：我的包裹（统计 + 检索 + 局部表）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

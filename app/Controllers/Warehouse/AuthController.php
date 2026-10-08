@@ -3,8 +3,8 @@
  * @file app/Controllers/Warehouse/AuthController.php
  * @description 仓库端认证：员工登录 / 退出（staff_type=2）
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Warehouse;
@@ -13,6 +13,7 @@ use App\Core\Request;
 use App\Core\Response;
 use App\Core\StaffAuth;
 use App\Services\AuthService;
+use App\Services\CaptchaService;
 use InvalidArgumentException;
 
 final class AuthController extends BaseController
@@ -35,6 +36,7 @@ final class AuthController extends BaseController
     {
         $this->verifyCsrf();
         try {
+            CaptchaService::verify('login_warehouse', (string) Request::input('captcha', ''));
             [$staff, $permissions] = AuthService::staffLogin(
                 Request::input('username'),
                 Request::input('password'),

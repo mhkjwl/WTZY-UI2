@@ -3,7 +3,7 @@
  * @file app/Controllers/User/AuthController.php
  * @description 用户端认证：注册 / 登录 / 退出
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

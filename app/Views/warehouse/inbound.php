@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/inbound.php
  * @description 收货入库：扫码定位 → 匹配归属 → 称重量尺拍照上架 → 确认入库（未匹配可登记无主件）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

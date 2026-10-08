@@ -4,11 +4,12 @@
  * @description 管理后台布局（光年 v5 外壳）：左侧导航（分组折叠由模板脚本接管）+ 顶栏（菜单开关 / 页面标题 / 账号菜单）+ 内容区；
  *              未迁移到新版的页面继续加载旧样式表，保证迁移期间逐批切换、页面观感不劣化
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -33,6 +34,7 @@ $uiMigrated = View::isMigrated($__view ?? '');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= View::e($csrf ?? '') ?>">
     <title><?= View::e($title ?? '管理后台') ?> · <?= View::e($brand) ?></title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/materialdesignicons.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/animate.min.css') ?>">
@@ -49,7 +51,11 @@ $uiMigrated = View::isMigrated($__view ?? '');
         <aside class="lyear-layout-sidebar">
             <div id="logo" class="sidebar-header">
                 <a href="/admin" class="sidebar-brand">
+                    <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+                    <img class="sidebar-brand__logo" src="<?= View::e($brandLogo) ?>" alt="<?= View::e($brand) ?>">
+                    <?php else: ?>
                     <span class="sidebar-brand__mark">🌍</span>
+                    <?php endif; ?>
                     <span class="sidebar-brand__text">
                         <b><?= View::e($brand) ?></b>
                         <small>管理后台</small>

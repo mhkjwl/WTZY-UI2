@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/package_detail_table.php
  * @description 仓库端包裹详情局部渲染（信息/计量/照片/异常记录/仓储作业操作区）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

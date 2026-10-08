@@ -2,7 +2,7 @@
 -- @file schema.sql
 -- @description 转运系统数据库建表脚本（P0 范围 · 44 表 + 种子数据）
 -- @author AI
--- @version 0.6
+-- @version 0.6.1
 -- @date 2026-10-08
 --
 -- 环境要求：MySQL 5.7+ / InnoDB / utf8mb4

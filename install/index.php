@@ -3,7 +3,7 @@
  * @file install/index.php
  * @description 一键安装入口：锁文件守卫 + 六步向导路由（可独立访问，也可由主入口 require）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-10-08
  */
 

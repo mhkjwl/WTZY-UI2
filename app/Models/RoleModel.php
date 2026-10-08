@@ -3,7 +3,7 @@
  * @file app/Models/RoleModel.php
  * @description 角色与 RBAC 权限矩阵数据访问
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

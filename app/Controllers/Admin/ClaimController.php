@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/ClaimController.php
  * @description 理赔处理：列表 / 详情 / 受理 / 初审 / 财务审核 / 管理员终审 / 驳回 / 赔付（多级审核）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

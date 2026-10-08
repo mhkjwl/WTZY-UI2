@@ -3,7 +3,7 @@
  * @file install/steps/step1_env.php
  * @description 安装第一步：环境检测（PHP 版本、扩展、目录权限）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

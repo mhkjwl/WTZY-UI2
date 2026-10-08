@@ -3,8 +3,8 @@
  * @file app/Views/warehouse/login.php
  * @description 仓库端登录页（与管理员端/用户端共用同一分栏版式）
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -17,6 +17,7 @@ use App\Core\View;
     'accountLabel' => '工号',
     'accountField' => 'username',
     'mark'         => '🏭',
+    'captchaScene' => 'login_warehouse',
     'heroTag'      => '仓库端',
     'heroTitle'    => '仓库作业系统',
     'heroDesc'     => '面向海外仓的现场作业台：扫码收货、称重上架、打包计费、出库交接与异常处置。',

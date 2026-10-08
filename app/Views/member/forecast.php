@@ -3,7 +3,7 @@
  * @file app/Views/member/forecast.php
  * @description 会员中心：包裹预报（列表 + 新增/编辑对话框）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

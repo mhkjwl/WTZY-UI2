@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/abnormal_table.php
  * @description 待处理异常列表局部渲染（含用户处置申请的标识）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

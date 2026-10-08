@@ -3,8 +3,8 @@
  * @file app/Core/Controller.php
  * @description 控制器抽象基类：视图渲染、统一 JSON 信封、CSRF 校验
  * @author AI
- * @version 0.6
- * @date 2026-09-13
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Core;
@@ -44,6 +44,29 @@ abstract class Controller
         $token = Request::header('X-CSRF-Token') ?? (string) (Request::input('_token') ?? '');
         if ($token === '' || !hash_equals($this->csrfToken(), $token)) {
             $this->fail('CSRF 校验失败，请刷新页面后重试', 403);
+        }
+    }
+
+    /**
+     * 释放会话文件锁：鉴权与 CSRF 令牌就绪后调用，
+     * 避免同一账号的并发请求（局部刷新、轮询、多标签页）被会话锁串行化
+     */
+    protected function closeSession(): void
+    {
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            // 关闭后会话写入不再持久化，先行确保 CSRF 令牌已生成并随本次关闭落盘
+            $this->csrfToken();
+            session_write_close();
+        }
+    }
+
+    /**
+     * 重新打开会话：仅供守卫之后确需写会话的低频操作使用（如密码修改后重建会话 ID）
+     */
+    protected function reopenSession(): void
+    {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
         }
     }
 }

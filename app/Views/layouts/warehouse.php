@@ -4,11 +4,12 @@
  * @description 仓库端布局（光年 v5 外壳）：与管理后台同款结构，顶栏标注所属仓库；
  *              未迁移到新版的页面继续加载旧样式表（含仓库端作业样式），逐批切换互不影响
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -34,6 +35,7 @@ $uiMigrated = View::isMigrated($__view ?? '');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= View::e($csrf ?? '') ?>">
     <title><?= View::e($title ?? '仓库作业台') ?> · <?= View::e($brand) ?></title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/materialdesignicons.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/animate.min.css') ?>">
@@ -51,7 +53,11 @@ $uiMigrated = View::isMigrated($__view ?? '');
         <aside class="lyear-layout-sidebar">
             <div id="logo" class="sidebar-header">
                 <a href="/warehouse" class="sidebar-brand">
+                    <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+                    <img class="sidebar-brand__logo" src="<?= View::e($brandLogo) ?>" alt="<?= View::e($brand) ?>">
+                    <?php else: ?>
                     <span class="sidebar-brand__mark">🏭</span>
+                    <?php endif; ?>
                     <span class="sidebar-brand__text">
                         <b><?= View::e($brand) ?></b>
                         <small>仓库作业台</small>

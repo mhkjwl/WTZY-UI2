@@ -3,7 +3,7 @@
  * @file common.php
  * @description 公共配置文件（初始化自动创建）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-10-08
  */
 
@@ -11,7 +11,7 @@
 // 版本信息
 // ============================================================
 defined('APP_NAME')    || define('APP_NAME', 'WTZY');
-defined('APP_VERSION') || define('APP_VERSION', '0.6');
+defined('APP_VERSION') || define('APP_VERSION', '0.6.1');
 // 运行环境取自 .env（本文件先于 Env 类加载，故就地读取）；无法读取时按生产环境处理，
 // 避免线上把 PHP 错误细节暴露给访问者
 defined('APP_ENV')     || define('APP_ENV', wtzy_env_mode());

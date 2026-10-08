@@ -3,7 +3,7 @@
  * @file app/Views/admin/member_levels.php
  * @description 后台：会员等级权益配置
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

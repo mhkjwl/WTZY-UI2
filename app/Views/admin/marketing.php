@@ -3,7 +3,7 @@
  * @file app/Views/admin/marketing.php
  * @description 营销与内容页：全站公告管理 + 内容页（协议/隐私/禁运品/FAQ）编辑
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

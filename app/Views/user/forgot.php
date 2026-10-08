@@ -3,8 +3,8 @@
  * @file app/Views/user/forgot.php
  * @description 用户端找回密码：校验用户名与邮箱 → 邮箱验证码 → 重置密码
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -23,7 +23,7 @@ ob_start();
         </div>
         <?= View::partial('user/captcha_field', ['scene' => 'reset']) ?>
         <div class="d-grid">
-            <button class="btn btn-primary" type="button" id="fp-send-btn" onclick="sendResetCode()">发送验证码</button>
+            <button class="btn btn--primary" type="button" id="fp-send-btn" onclick="sendResetCode()">发送验证码</button>
         </div>
     </div>
 
@@ -36,7 +36,7 @@ ob_start();
             <div class="ly-captcha">
                 <input class="form-control" type="text" id="fp-code" maxlength="6" inputmode="numeric"
                        autocomplete="one-time-code" placeholder="6 位数字">
-                <button class="btn btn-outline-primary" type="button" id="fp-resend-btn" onclick="sendResetCode()">重新发送</button>
+                <button class="btn btn--ghost" type="button" id="fp-resend-btn" onclick="sendResetCode()">重新发送</button>
             </div>
         </div>
         <div class="mb-3">
@@ -49,7 +49,7 @@ ob_start();
             <input class="form-control" type="password" id="fp-password-confirm" autocomplete="new-password" required>
         </div>
         <div class="d-grid">
-            <button class="btn btn-primary" type="button" id="fp-reset-btn" onclick="submitReset()">重置密码</button>
+            <button class="btn btn--primary" type="button" id="fp-reset-btn" onclick="submitReset()">重置密码</button>
         </div>
     </div>
 

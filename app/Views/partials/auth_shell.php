@@ -4,11 +4,12 @@
  * @description 认证页外壳（登录 / 注册 / 找回密码共用，光年 v5 版式）：左侧品牌区 + 右侧表单区；
  *              各端认证页只需传入标题、图标、特性列表与表单 HTML，即得到完全一致的版式
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -33,7 +34,11 @@ $heroPoints = $heroPoints ?? [];
 <div class="ly-auth">
     <aside class="ly-auth__hero">
         <div class="ly-auth__brand">
-            <span>🌍</span>
+            <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+                <img class="ly-auth__brand-logo" src="<?= View::e($brandLogo) ?>" alt="<?= View::e(SiteChrome::brand()) ?>">
+            <?php else: ?>
+                <span>🌍</span>
+            <?php endif; ?>
             <span><?= View::e(SiteChrome::brand()) ?></span>
             <?php if ($heroTag !== ''): ?><span class="ly-auth__tag"><?= View::e($heroTag) ?></span><?php endif; ?>
         </div>

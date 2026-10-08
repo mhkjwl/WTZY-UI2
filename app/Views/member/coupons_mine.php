@@ -3,7 +3,7 @@
  * @file app/Views/member/coupons_mine.php
  * @description 我的券包局部渲染（领券后仅替换本区域）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

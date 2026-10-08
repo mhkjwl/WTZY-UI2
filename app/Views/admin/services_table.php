@@ -3,7 +3,7 @@
  * @file app/Views/admin/services_table.php
  * @description 增值服务列表局部渲染（保存/启停/删除后仅替换本区域）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

@@ -3,8 +3,8 @@
  * @file app/Views/admin/login.php
  * @description 管理后台登录页（与仓库端/用户端共用同一分栏版式）
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -17,6 +17,7 @@ use App\Core\View;
     'accountLabel' => '账号',
     'accountField' => 'username',
     'mark'         => '🛠️',
+    'captchaScene' => 'login_admin',
     'heroTag'      => '管理后台',
     'heroTitle'    => '全球转运管理系统',
     'heroDesc'     => '从海外仓收货到末端派送的全链路管理：用户与订单、仓库与渠道、财务对账、客服工单一站完成。',

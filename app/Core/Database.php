@@ -3,7 +3,7 @@
  * @file app/Core/Database.php
  * @description PDO 连接单例（utf8mb4 / 异常模式 / 本地预处理），连接信息来自 config/database.php
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

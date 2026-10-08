@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/inbound_table.php
  * @description 待收货列表局部渲染（检索/分页后仅替换本区域）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

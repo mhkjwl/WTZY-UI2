@@ -3,7 +3,7 @@
  * @file app/Views/pay/result.php
  * @description 支付回跳结果页：只读展示订单状态，并提供走 POST 的主动查询入口
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

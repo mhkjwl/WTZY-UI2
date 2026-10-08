@@ -3,7 +3,7 @@
  * @file app/Views/admin/claims.php
  * @description 理赔处理页：状态统计 + 检索 + 审核/驳回对话框
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

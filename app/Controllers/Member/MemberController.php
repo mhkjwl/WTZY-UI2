@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/MemberController.php
  * @description 会员中心：会员权益、优惠券、积分明细、邀请返利
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

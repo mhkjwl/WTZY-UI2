@@ -3,7 +3,7 @@
  * @file app/Views/member/flows_table.php
  * @description 资金流水局部渲染
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

@@ -3,7 +3,7 @@
  * @file app/Models/RechargeOrderModel.php
  * @description 充值订单数据访问与人工确认入账（财务中心）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/PackingController.php
  * @description 打包称重：待打包运单拣货核对 → 录入打包实重与箱规 → 按实重重算运费 → 转待支付
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

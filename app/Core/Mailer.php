@@ -3,7 +3,7 @@
  * @file app/Core/Mailer.php
  * @description 邮件发送（原生 SMTP 客户端，无第三方依赖；配置见 config/mail.php 与 .env）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

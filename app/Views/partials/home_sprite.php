@@ -3,7 +3,7 @@
  * @file app/Views/partials/home_sprite.php
  * @description 官网外壳共用：SVG 图标库与渐变定义（首页与转运资费页共用）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 ?>

@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/storage_table.php
  * @description 在库包裹列表局部渲染（含上架、登记异常入口）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

@@ -3,8 +3,8 @@
  * @file app/Views/admin/system_site.php
  * @description 站点信息页：网站名称 / 网站关键词 / 网站介绍 编辑与实时预览
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -13,6 +13,8 @@ use App\Core\View;
  * @var array $site  含 site_name / site_keywords / site_description
  * @var array $perms
  * @var string $csrf
+ * @var string $faviconUrl 浏览器图标地址（未上传为空串）
+ * @var string $logoUrl    网站 Logo 地址（未上传为空串）
  */
 ?>
 <div class="site-grid">
@@ -38,6 +40,39 @@ use App\Core\View;
             <textarea class="form-input" id="site-description" rows="5" maxlength="500"
                       placeholder="一句话说明网站提供的服务与优势"><?= View::e($site['site_description']) ?></textarea>
             <p class="form-hint">搜索引擎摘要与分享卡片，建议 60~160 个字符。</p>
+        </div>
+
+        <?php $faviconUrl = $site['faviconUrl'] ?? ''; $logoUrl = $site['logoUrl'] ?? ''; ?>
+        <h3 class="section-head" style="margin-top:6px"><span class="badge badge--sky">品牌素材</span><span class="rule"></span></h3>
+        <div class="form-row">
+            <div class="form-field">
+                <label class="form-label">浏览器图标</label>
+                <div class="brand-upload">
+                    <input type="file" id="favicon-file" accept="image/jpeg,image/png,image/webp" hidden>
+                    <button class="btn btn--ghost btn--sm" type="button" onclick="pickBrand('favicon')">选择图片</button>
+                    <div class="brand-upload__status">
+                        <img id="favicon-preview" class="brand-upload__preview brand-upload__preview--favicon" alt=""
+                             src="<?= $faviconUrl !== '' ? View::e($faviconUrl) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' ?>"
+                             <?= $faviconUrl === '' ? 'hidden' : '' ?>>
+                        <span id="favicon-state" class="brand-upload__state<?= $faviconUrl !== '' ? ' is-set' : '' ?>"><?= $faviconUrl !== '' ? '已设置' : '未设置' ?></span>
+                    </div>
+                </div>
+                <p class="form-hint">上传后自动裁为 500×500 固定方形并保存为 favicon.ico，全站浏览器标签页生效。</p>
+            </div>
+            <div class="form-field">
+                <label class="form-label">网站 Logo</label>
+                <div class="brand-upload">
+                    <input type="file" id="logo-file" accept="image/jpeg,image/png,image/webp" hidden>
+                    <button class="btn btn--ghost btn--sm" type="button" onclick="pickBrand('logo')">选择图片</button>
+                    <div class="brand-upload__status">
+                        <img id="logo-preview" class="brand-upload__preview" alt=""
+                             src="<?= $logoUrl !== '' ? View::e($logoUrl) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' ?>"
+                             <?= $logoUrl === '' ? 'hidden' : '' ?>>
+                        <span id="logo-state" class="brand-upload__state<?= $logoUrl !== '' ? ' is-set' : '' ?>"><?= $logoUrl !== '' ? '已设置' : '未设置' ?></span>
+                    </div>
+                </div>
+                <p class="form-hint">显示在三端页面左上方，按固定高度等比展示；上传后自动压缩到合理尺寸。</p>
+            </div>
         </div>
 
         <h3 class="section-head" style="margin-top:6px"><span class="badge badge--violet">联系方式与备案</span><span class="rule"></span></h3>
@@ -263,4 +298,42 @@ function resetSiteForm() {
         Notify.info('已恢复为上次保存的内容');
     }, { title: '放弃修改', confirmText: '确认放弃', danger: true });
 }
+
+/** 品牌素材：选择图片即上传，成功后局部刷新预览（不整页刷新） */
+function pickBrand(type) {
+    document.getElementById(type + '-file').click();
+}
+
+function bindBrandUpload(type) {
+    document.getElementById(type + '-file').addEventListener('change', function () {
+        var file = this.files && this.files[0];
+        this.value = '';
+        if (!file) { return; }
+        if (file.size > 5 * 1024 * 1024) { Notify.warning('图片不能超过 5MB'); return; }
+        var form = new FormData();
+        form.append('type', type);
+        form.append('file', file);
+        var handle = Notify.loading('上传中…');
+        fetch('/admin/system/site/upload', {
+            method: 'POST',
+            headers: { 'X-Requested-With': 'fetch', 'X-CSRF-Token': App.csrf() },
+            body: form
+        }).then(function (res) { return res.json(); }).then(function (data) {
+            if (handle && handle.close) { handle.close(); }
+            if (!data.success) { Notify.error(data.message || '上传失败'); return; }
+            var preview = document.getElementById(type + '-preview');
+            preview.src = data.data.url + '&t=' + Date.now();
+            preview.hidden = false;
+            var state = document.getElementById(type + '-state');
+            state.textContent = '已设置';
+            state.classList.add('is-set');
+            Notify.success('上传成功');
+        }).catch(function () {
+            if (handle && handle.close) { handle.close(); }
+            Notify.error('网络异常，请稍后重试');
+        });
+    });
+}
+bindBrandUpload('favicon');
+bindBrandUpload('logo');
 </script>

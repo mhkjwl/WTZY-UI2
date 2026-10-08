@@ -3,7 +3,7 @@
  * @file app/Views/admin/claim_detail.php
  * @description 理赔详情页：完整信息 + 多级审核时间线 + 操作按钮（按状态和权限显隐）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

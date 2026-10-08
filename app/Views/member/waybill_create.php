@@ -3,7 +3,7 @@
  * @file app/Views/member/waybill_create.php
  * @description 会员中心：新建转运（选包裹 → 选地址 → 选渠道 → 增值服务 → 试算 → 提交）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

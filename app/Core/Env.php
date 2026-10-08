@@ -3,7 +3,7 @@
  * @file app/Core/Env.php
  * @description .env 环境变量加载器（KEY=VALUE 格式；真实 .env 由安装程序生成，不入版本库）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

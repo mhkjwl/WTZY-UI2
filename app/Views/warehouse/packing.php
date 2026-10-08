@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/packing.php
  * @description 打包称重：运单列表（含已打包），进详情拣货核对 → 录入实重 → 重算运费
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

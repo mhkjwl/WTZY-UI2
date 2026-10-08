@@ -3,7 +3,7 @@
  * @file install/steps/step6_done.php
  * @description 安装第六步：完成页（入口指引与锁文件说明）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/admin/partials/rate_table.php
  * @description 资费/服务行编辑表格（两张表结构相同，共用此片段）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

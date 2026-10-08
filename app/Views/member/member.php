@@ -3,7 +3,7 @@
  * @file app/Views/member/member.php
  * @description 会员中心：会员等级权益与成长进度
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

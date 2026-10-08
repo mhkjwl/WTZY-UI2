@@ -3,11 +3,12 @@
  * @file app/Views/partials/home_header.php
  * @description 官网外壳共用：顶栏、主导航与移动端菜单（品牌与联系方式取自后台配置）
  * @author AI
- * @version 0.6
- * @date 2026-09-13
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 $brand = $brand ?? SiteChrome::brand();
@@ -43,7 +44,11 @@ $identity = $identity ?? SiteChrome::identity();
   <div class="container">
     <nav id="nav">
       <a class="logo" href="#home">
+        <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+        <img class="logo-img" src="<?= View::e($brandLogo) ?>" alt="<?= View::e($brand) ?>">
+        <?php else: ?>
         <span class="logo-mark"><svg><use href="#i-globe"/></svg></span>
+        <?php endif; ?>
         <span class="logo-name"><?= View::e($brand) ?></span>
       </a>
       <ul class="nav-links">

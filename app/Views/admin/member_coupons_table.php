@@ -3,7 +3,7 @@
  * @file app/Views/admin/member_coupons_table.php
  * @description 优惠券列表局部渲染（新建/编辑/启停/发放后仅替换本区域）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

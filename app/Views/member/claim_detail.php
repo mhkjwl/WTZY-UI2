@@ -3,7 +3,7 @@
  * @file app/Views/member/claim_detail.php
  * @description 会员中心：理赔详情
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

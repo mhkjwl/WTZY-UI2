@@ -3,7 +3,7 @@
  * @file app/Views/member/tracking_region.php
  * @description 物流跟踪：运单列表与轨迹详情区域（检索/翻页/切换运单时局部替换，规范 §2.5）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

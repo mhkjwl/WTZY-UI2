@@ -3,7 +3,7 @@
  * @file install/functions.php
  * @description 安装模块公共函数（自包含，不依赖主应用代码）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-10-08
  */
 

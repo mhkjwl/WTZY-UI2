@@ -3,7 +3,7 @@
  * @file app/Views/admin/member_coupons.php
  * @description 后台：优惠券管理与发放
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

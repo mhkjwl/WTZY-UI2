@@ -3,8 +3,8 @@
  * @file app/Controllers/Admin/BaseController.php
  * @description 管理端控制器基类：员工登录校验、RBAC 权限门卫、菜单过滤、后台视图与局部表渲染
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Admin;
@@ -67,6 +67,8 @@ abstract class BaseController extends Controller
             Response::redirect('/admin/login');
         }
         $this->staff = $fresh;
+        // 鉴权与会话读取已完成，释放会话锁排开同账号并发请求
+        $this->closeSession();
     }
 
     /**

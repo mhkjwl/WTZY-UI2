@@ -3,7 +3,7 @@
  * @file app/Models/CouponModel.php
  * @description 优惠券：可领列表、领取、我的券、核销
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

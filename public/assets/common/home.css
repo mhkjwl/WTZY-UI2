@@ -2,8 +2,8 @@
  * @file assets/common/home.css
  * @description 官网首页专属样式（首页设计稿样式，仅首页引用，与其他页面样式隔离）
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 /* ============ 基础 ============ */
@@ -86,6 +86,7 @@ section{position:relative}
 .logo{display:flex;align-items:center;gap:11px;color:var(--nav-ink);font-weight:900}
 .logo-mark{width:42px;height:42px;border-radius:14px;background:var(--grad-brand);display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(79,102,241,.7);flex:none}
 .logo-mark svg{width:23px;height:23px;color:#fff}
+.logo-img{height:42px;width:auto;max-width:180px;object-fit:contain;flex:none}
 .logo-name{font-size:19px;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
 .logo-name small{display:block;font-family:var(--font-latin);font-size:10px;font-weight:600;letter-spacing:.28em;color:var(--sky-400)}
 .nav-links{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}

@@ -3,7 +3,7 @@
  * @file app/Models/KeywordFilter.php
  * @description 关键词检索条件构造：多列 OR LIKE 的占位符生成
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

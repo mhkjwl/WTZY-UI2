@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/DashboardController.php
  * @description 会员中心工作台：账户概览、包裹与运单动态、待办提示
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

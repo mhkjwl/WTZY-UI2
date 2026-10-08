@@ -3,8 +3,8 @@
  * @file app/Controllers/Member/BaseController.php
  * @description 会员中心控制器基类：登录守卫、侧边栏菜单、后台同款视图与局部表渲染
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Member;
@@ -59,6 +59,8 @@ abstract class BaseController extends Controller
         if ($this->kycLocked) {
             $this->enforceRealnameGate();
         }
+        // 鉴权与会话读取已完成，释放会话锁排开同账号并发请求（局部刷新、轮询、多标签页）
+        $this->closeSession();
     }
 
     /**

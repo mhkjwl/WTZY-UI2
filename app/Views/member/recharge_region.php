@@ -3,7 +3,7 @@
  * @file app/Views/member/recharge_region.php
  * @description 会员中心：充值页可刷新区域的组合片段（统计卡 + 充值记录，供翻页局部替换）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  *
  * 统计卡位于表单上方、充值记录位于表单下方，两者中间隔着不可替换的表单，

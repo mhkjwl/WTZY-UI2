@@ -3,7 +3,7 @@
  * @file app/Core/Request.php
  * @description 请求读取：路径解析、JSON/表单参数统一取值、请求头与客户端 IP
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

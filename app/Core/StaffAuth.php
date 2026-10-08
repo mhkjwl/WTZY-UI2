@@ -3,7 +3,7 @@
  * @file app/Core/StaffAuth.php
  * @description 员工会话鉴权（管理端 / 仓库端会话彼此独立，含 RBAC 角色判断）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  *
  * 两端隔离且互不影响：

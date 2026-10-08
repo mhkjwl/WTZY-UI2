@@ -3,7 +3,7 @@
  * @file app/Views/admin/users.php
  * @description 用户管理页：统计 + 检索工具栏 + 局部表 + 编辑（含登录凭据）/拉黑/风控/余额对话框
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

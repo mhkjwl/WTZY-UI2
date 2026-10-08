@@ -3,7 +3,7 @@
  * @file app/Views/partials/ticket_thread.php
  * @description 工单对话记录（用户端与后台共用，按回复方区分头像、标签与配色）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  *
  * 两端用同一份模板，保证后台与用户端看到的对话类型、顺序、标识完全一致。

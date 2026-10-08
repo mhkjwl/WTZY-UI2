@@ -3,7 +3,7 @@
  * @file app/Models/PackageModel.php
  * @description 包裹数据访问（用户端视角：预报 / 列表 / 认领 / 退运销毁 / 仓储费）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

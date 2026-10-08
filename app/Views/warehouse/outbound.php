@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/outbound.php
  * @description 出库交接：待出库运单（用户已支付）录入承运单号并确认出库（承运商为只读）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

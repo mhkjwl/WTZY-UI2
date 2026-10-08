@@ -3,7 +3,7 @@
  * @file app/Controllers/OpenApi/TaskController.php
  * @description 自动任务远程触发端点：供外部定时任务（cron / 云函数 / 其他系统）通过 URL 调用
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-16
  */
 

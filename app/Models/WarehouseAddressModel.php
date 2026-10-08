@@ -3,7 +3,7 @@
  * @file app/Models/WarehouseAddressModel.php
  * @description 用户海外仓收货地址数据访问（每用户每仓库一条）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

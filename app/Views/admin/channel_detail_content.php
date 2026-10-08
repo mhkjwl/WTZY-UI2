@@ -3,7 +3,7 @@
  * @file app/Views/admin/channel_detail_content.php
  * @description 渠道详情局部内容：渠道概要 / 分区 / 首重续重价格 / 附加费维护（操作后整区刷新）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

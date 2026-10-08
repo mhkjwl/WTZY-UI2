@@ -3,7 +3,7 @@
  * @file app/Views/member/invoices_region.php
  * @description 会员中心：发票统计与申请记录区域（翻页/提交后局部替换，规范 §2.5）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

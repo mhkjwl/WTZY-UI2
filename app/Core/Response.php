@@ -3,7 +3,7 @@
  * @file app/Core/Response.php
  * @description 响应输出：JSON 统一信封与重定向
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

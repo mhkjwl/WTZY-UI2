@@ -3,8 +3,8 @@
  * @file app/Models/SettingsModel.php
  * @description 系统配置（键值对）数据访问
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Models;
@@ -14,16 +14,19 @@ use PDO;
 
 final class SettingsModel
 {
+    /** 请求级缓存：全量配置行（保持后台配置页所需的排序，本次请求内复用） */
+    private static ?array $rows = null;
+
+    /** 请求级缓存：配置键到值的映射（get 高频使用） */
+    private static ?array $map = null;
+
     /**
      * 全部配置（按配置组分组）
      */
     public static function allGrouped(): array
     {
-        $rows = Database::pdo()->query(
-            'SELECT id, setting_key, setting_value, group_name, remark FROM ' . Database::table('settings') . ' ORDER BY group_name ASC, id ASC'
-        )->fetchAll(PDO::FETCH_ASSOC);
         $grouped = [];
-        foreach ($rows as $row) {
+        foreach (self::rows() as $row) {
             $grouped[$row['group_name']][] = $row;
         }
         return $grouped;
@@ -31,12 +34,33 @@ final class SettingsModel
 
     public static function get(string $key, string $default = ''): string
     {
-        $stmt = Database::pdo()->prepare(
-            'SELECT setting_value FROM ' . Database::table('settings') . ' WHERE setting_key = :k LIMIT 1'
-        );
-        $stmt->execute([':k' => $key]);
-        $value = $stmt->fetchColumn();
-        return $value === false ? $default : (string) $value;
+        $map = self::map();
+        return array_key_exists($key, $map) ? $map[$key] : $default;
+    }
+
+    /**
+     * 配置表为小型键值表：整表加载一次换取逐键零查询，写操作后失效重新加载
+     */
+    private static function rows(): array
+    {
+        if (self::$rows === null) {
+            self::$rows = Database::pdo()->query(
+                'SELECT id, setting_key, setting_value, group_name, remark FROM ' . Database::table('settings') . ' ORDER BY group_name ASC, id ASC'
+            )->fetchAll(PDO::FETCH_ASSOC);
+            self::$map = [];
+            foreach (self::$rows as $row) {
+                self::$map[(string) $row['setting_key']] = (string) $row['setting_value'];
+            }
+        }
+        return self::$rows;
+    }
+
+    private static function map(): array
+    {
+        if (self::$map === null) {
+            self::rows();
+        }
+        return self::$map;
     }
 
     /**
@@ -51,12 +75,15 @@ final class SettingsModel
                 'UPDATE ' . Database::table('settings') . ' SET setting_value = :v WHERE setting_key = :k'
             );
             $upd->execute([':v' => $value, ':k' => $key]);
-            return;
+        } else {
+            $ins = Database::pdo()->prepare(
+                'INSERT INTO ' . Database::table('settings') . ' (setting_key, setting_value, group_name, remark) VALUES (:k, :v, :g, :r)'
+            );
+            $ins->execute([':k' => $key, ':v' => $value, ':g' => $group, ':r' => $remark]);
         }
-        $ins = Database::pdo()->prepare(
-            'INSERT INTO ' . Database::table('settings') . ' (setting_key, setting_value, group_name, remark) VALUES (:k, :v, :g, :r)'
-        );
-        $ins->execute([':k' => $key, ':v' => $value, ':g' => $group, ':r' => $remark]);
+        // 写后失效请求级缓存，保证同请求内后续读取拿到新值
+        self::$rows = null;
+        self::$map = null;
     }
 
     /**

@@ -3,11 +3,12 @@
  * @file app/Views/layouts/base.php
  * @description 全站公共布局：顶栏导航 + 内容区 + 全局通知容器 + CSRF meta
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -29,6 +30,7 @@ $uiMigrated = View::isMigrated($__view ?? '');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= View::e($csrf ?? '') ?>">
     <title><?= View::e($title ?? $brand) ?></title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/common/common.css') ?>">
     <?php if ($uiMigrated): ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/materialdesignicons.min.css') ?>">

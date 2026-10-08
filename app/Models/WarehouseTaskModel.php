@@ -3,7 +3,7 @@
  * @file app/Models/WarehouseTaskModel.php
  * @description 仓库作业任务数据访问：主管指派作业给操作员，作业完成后自动收口
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

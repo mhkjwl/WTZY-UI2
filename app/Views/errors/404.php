@@ -3,11 +3,12 @@
  * @file app/Views/errors/404.php
  * @description 404 页面（独立外壳：不依赖布局、数据库与历史样式表，自持新版样式）
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -15,6 +16,7 @@ use App\Core\View;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>404 · 页面不存在</title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/style.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/ui/theme.css') ?>">

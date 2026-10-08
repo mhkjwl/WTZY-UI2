@@ -3,7 +3,7 @@
  * @file app/Views/admin/roles_content.php
  * @description 角色权限矩阵局部内容（勾选后按角色整体保存）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

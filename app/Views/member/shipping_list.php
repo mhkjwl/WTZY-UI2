@@ -3,7 +3,7 @@
  * @file app/Views/member/shipping_list.php
  * @description 收货地址卡片列表局部渲染（保存/删除后仅替换本区域）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

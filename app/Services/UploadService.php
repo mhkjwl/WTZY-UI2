@@ -3,8 +3,8 @@
  * @file app/Services/UploadService.php
  * @description 图片上传：类型/大小校验 → 按年月归档落盘 → 返回可访问 URL（用户端与仓库端共用）
  * @author AI
- * @version 0.6
- * @date 2026-09-13
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Services;
@@ -92,7 +92,7 @@ final class UploadService
      * 优先用 fileinfo 扩展做字节级嗅探；未启用该扩展时退回 getimagesize（标准库，读文件头），
      * 两者都不可用则返回空串按拒绝处理，避免未校验的文件被放行
      */
-    private static function detectMime(string $path): string
+    public static function detectMime(string $path): string
     {
         if (class_exists(\finfo::class)) {
             $mime = (string) (new \finfo(FILEINFO_MIME_TYPE))->file($path);

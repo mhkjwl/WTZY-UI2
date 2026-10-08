@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/ReportController.php
  * @description 数据报表：用户增长 / 收支趋势 / 运单与渠道概览（纯 SQL 聚合 + CSS 图表）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

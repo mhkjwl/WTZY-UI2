@@ -3,7 +3,7 @@
  * @file app/Views/member/packages_table.php
  * @description 我的包裹列表局部渲染
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

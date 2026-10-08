@@ -3,7 +3,7 @@
  * @file public/index.php
  * @description 统一入口：内置服务器静态直通 + PHP 版本门卫 + 应用引导加载
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  *
  * 注意：本文件语法保持 PHP 7.x 可解析（低版本环境友好降级为提示页，而非裸报错），

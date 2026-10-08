@@ -3,7 +3,7 @@
  * @file app/Views/warehouse/packing_detail.php
  * @description 打包作业页：包裹清单与库位（拣货核对）→ 录入实重箱规 → 确认打包并重算运费
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

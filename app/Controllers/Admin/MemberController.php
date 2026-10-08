@@ -3,8 +3,8 @@
  * @file app/Controllers/Admin/MemberController.php
  * @description 后台会员与营销：会员等级权益、优惠券管理发放、邀请返利设置
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Admin;
@@ -112,22 +112,21 @@ final class MemberController extends BaseController
 
     /**
      * 按新门槛重算用户等级（只升不降，避免降级引发客诉）
+     * 以「每等级一条集合更新」替代逐用户循环，用户量增长后不再随行数放大写操作
      */
     private function recalcLevels(): void
     {
         $pdo = Database::pdo();
-        $levels = MemberLevelModel::all();
-        foreach ($pdo->query('SELECT id, member_level, points FROM ' . Database::table('users') . ' WHERE deleted_at IS NULL')->fetchAll(PDO::FETCH_ASSOC) as $u) {
-            $target = 1;
-            foreach ($levels as $lv) {
-                if ((int) $u['points'] >= (int) $lv['min_points']) {
-                    $target = max($target, (int) $lv['level']);
-                }
-            }
-            if ($target > (int) $u['member_level']) {
-                $pdo->prepare('UPDATE ' . Database::table('users') . ' SET member_level = :l WHERE id = :id')
-                    ->execute([':l' => $target, ':id' => (int) $u['id']]);
-            }
+        foreach (MemberLevelModel::all() as $level) {
+            $pdo->prepare(
+                'UPDATE ' . Database::table('users') . '
+                 SET member_level = :target
+                 WHERE deleted_at IS NULL AND member_level < :current AND points >= :min_points'
+            )->execute([
+                ':target'     => (int) $level['level'],
+                ':current'    => (int) $level['level'],
+                ':min_points' => (int) $level['min_points'],
+            ]);
         }
     }
 

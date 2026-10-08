@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/WarehouseController.php
  * @description 仓库管理：仓库增改/启停 + 库位列表与新增
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

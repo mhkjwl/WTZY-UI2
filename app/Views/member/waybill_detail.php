@@ -3,7 +3,7 @@
  * @file app/Views/member/waybill_detail.php
  * @description 会员中心：运单详情（费用明细 / 服务 / 包裹 / 轨迹 / 支付与取消）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

@@ -3,7 +3,7 @@
  * @file app/Controllers/OpenApi/PingController.php
  * @description 开放 API 健康检查（连通性自测端点）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

@@ -3,7 +3,7 @@
  * @file app/Views/member/dashboard.php
  * @description 会员中心工作台：账户概览 + 待办提示 + 最近动态
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

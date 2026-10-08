@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/ForecastController.php
  * @description 会员中心：包裹预报（新增/修改/凭证上传）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

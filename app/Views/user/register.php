@@ -3,8 +3,8 @@
  * @file app/Views/user/register.php
  * @description 用户端注册页（注册成功自动登录并分配专属海外仓识别码）
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
@@ -35,7 +35,7 @@ ob_start();
             <div class="ly-captcha">
                 <input class="form-control" type="text" id="email-code" name="email_code" maxlength="6"
                        inputmode="numeric" placeholder="6 位数字" required>
-                <button class="btn btn-outline-primary" type="button" id="send-code-btn" onclick="sendRegisterCode()">发送验证码</button>
+                <button class="btn btn--ghost" type="button" id="send-code-btn" onclick="sendRegisterCode()">发送验证码</button>
             </div>
             <p class="form-text text-muted mb-0">验证码 10 分钟内有效；开启邮箱验证后必须完成校验才能注册。</p>
         </div>
@@ -55,7 +55,7 @@ ob_start();
         </div>
         <?= View::partial('user/captcha_field', ['scene' => 'register']) ?>
         <div class="d-grid">
-            <button class="btn btn-primary" type="submit" id="register-btn">注 册</button>
+            <button class="btn btn--primary" type="submit" id="register-btn">注 册</button>
         </div>
     </form>
     <div class="ly-auth__foot-links">

@@ -3,7 +3,7 @@
  * @file app/Controllers/Warehouse/TaskController.php
  * @description 任务分配：主管把入库/上架/打包/出库/异常作业指派给操作员并跟踪完成情况
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

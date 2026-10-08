@@ -3,7 +3,7 @@
  * @file app/Controllers/Member/PackageController.php
  * @description 会员中心：我的包裹（列表/详情/认领/退运销毁）与异常件
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

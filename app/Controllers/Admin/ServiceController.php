@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/ServiceController.php
  * @description 增值服务设置：下单页可勾选增值服务的字典维护（新建/编辑/启停/删除）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

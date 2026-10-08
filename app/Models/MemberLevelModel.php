@@ -3,7 +3,7 @@
  * @file app/Models/MemberLevelModel.php
  * @description 会员等级配置与等级权益读取
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

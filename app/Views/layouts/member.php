@@ -4,11 +4,12 @@
  * @description 会员中心布局（光年 v5 外壳）：与管理端同款结构，顶栏账号菜单内含会员等级与返回官网；
  *              已迁移页面加载新版样式，未迁移页面保持旧观感
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -33,6 +34,7 @@ $memberName = (string) ($user['display_name'] ?? $user['user_no'] ?? '');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?= View::e($csrf ?? '') ?>">
     <title><?= View::e($title ?? '会员中心') ?> · <?= View::e($brand) ?></title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/materialdesignicons.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/animate.min.css') ?>">
@@ -49,7 +51,11 @@ $memberName = (string) ($user['display_name'] ?? $user['user_no'] ?? '');
         <aside class="lyear-layout-sidebar">
             <div id="logo" class="sidebar-header">
                 <a href="/user" class="sidebar-brand">
+                    <?php if (($brandLogo = BrandAsset::logoUrl()) !== ''): ?>
+                    <img class="sidebar-brand__logo" src="<?= View::e($brandLogo) ?>" alt="<?= View::e($brand) ?>">
+                    <?php else: ?>
                     <span class="sidebar-brand__mark">📦</span>
+                    <?php endif; ?>
                     <span class="sidebar-brand__text">
                         <b><?= View::e($brand) ?></b>
                         <small>会员中心</small>

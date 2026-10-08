@@ -3,8 +3,8 @@
  * @file app/Controllers/Warehouse/BaseController.php
  * @description 仓库端控制器基类：员工登录校验、仓库归属隔离、wh.* 权限门卫、菜单与待办徽标
  * @author AI
- * @version 0.6
- * @date 2026-09-12
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Warehouse;
@@ -55,6 +55,8 @@ abstract class BaseController extends Controller
         $this->staff = $fresh;
         $warehouse = WarehouseModel::findById($this->warehouseId());
         $this->warehouseName = $warehouse === null ? '未分配仓库' : (string) $warehouse['name'];
+        // 鉴权与会话读取已完成，释放会话锁排开同账号并发请求（连续扫码作业、局部刷新）
+        $this->closeSession();
     }
 
     /**

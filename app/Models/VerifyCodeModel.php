@@ -3,7 +3,7 @@
  * @file app/Models/VerifyCodeModel.php
  * @description 邮箱/短信验证码的签发与核销（只存哈希、限频、限次、一次性）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

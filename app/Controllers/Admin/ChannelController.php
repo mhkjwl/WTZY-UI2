@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/ChannelController.php
  * @description 物流渠道管理：渠道增改/启停 + 详情页（分区/价格/附加费维护）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

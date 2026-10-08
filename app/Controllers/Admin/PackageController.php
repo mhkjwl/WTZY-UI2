@@ -3,7 +3,7 @@
  * @file app/Controllers/Admin/PackageController.php
  * @description 包裹管理：全用户包裹检索与详情（与会员中心「我的包裹」同源数据，客服据此答复工单）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-15
  */
 

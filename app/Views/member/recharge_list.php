@@ -3,7 +3,7 @@
  * @file app/Views/member/recharge_list.php
  * @description 会员中心：充值记录表区域（独立片段，供整页与翻页局部刷新共用）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

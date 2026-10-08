@@ -3,7 +3,7 @@
  * @file install/steps/step5_install.php
  * @description 安装第五步：执行安装（确认页 + 一键执行：导入建表 → 管理员 → 站点配置 → .env → 锁）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-10-08
  */
 

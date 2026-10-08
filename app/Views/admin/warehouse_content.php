@@ -3,7 +3,7 @@
  * @file app/Views/admin/warehouse_content.php
  * @description 仓库管理局部内容：仓库表 + 库位表（增改/启停/新增库位后整区刷新）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

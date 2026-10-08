@@ -4,7 +4,7 @@
  * @file config/mail.php
  * @description 邮件发送配置（全部取自 .env，未配置时邮件相关功能自动禁用）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

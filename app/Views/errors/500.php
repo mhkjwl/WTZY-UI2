@@ -3,11 +3,12 @@
  * @file app/Views/errors/500.php
  * @description 500 页面：生产环境隐藏异常细节，仅开发环境展示（独立外壳，自持新版样式）
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\View;
+use App\Services\BrandAsset;
 
 /**
  * @var bool   $debug 是否展示异常细节（仅开发环境）
@@ -20,6 +21,7 @@ use App\Core\View;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>500 · 系统错误</title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/lyear/css/style.min.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/ui/theme.css') ?>">

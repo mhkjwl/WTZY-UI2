@@ -4,8 +4,8 @@
  *              以及迁移页组件皮肤（body.ui-new 作用域内把历史组件类名渲染为光年视觉，
  *              未迁移页面不加载该作用域规则，保持原观感不变）
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 /* ══ 外壳细节 ═══════════════════════════════════ */
@@ -50,6 +50,14 @@
 .sidebar-brand__text small {
     font-size: 12px;
     color: #8a919f;
+}
+/* 站内 Logo：固定高度等比展示、宽度限幅，素材尺寸不一也不会撑乱侧栏 */
+.sidebar-brand__logo {
+    flex: none;
+    height: 34px;
+    width: auto;
+    max-width: 132px;
+    object-fit: contain;
 }
 
 /* 顶栏：页面标题与账号区 */
@@ -1269,4 +1277,46 @@ body.ui-new .stat-card__label { font-size: 14px; color: #8a919f; }
 @media (max-width: 760px) {
     body.ui-new .tile-grid, body.ui-new .astat-grid { grid-template-columns: 1fr; }
     body.ui-new .card-grid, body.ui-new .card-grid--4 { grid-template-columns: 1fr; }
+}
+
+/* ══ 品牌素材（认证页 Logo / 系统设置上传预览）══════════════════════ */
+
+.ly-auth__brand-logo {
+    height: 26px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+}
+.brand-upload { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.brand-upload__status { display: flex; align-items: center; gap: 10px; }
+.brand-upload__preview {
+    height: 44px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 6px;
+    padding: 4px;
+}
+.brand-upload__preview--favicon {
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    padding: 0;
+    border-radius: 8px;
+}
+.brand-upload__state {
+    font-size: 12.5px;
+    color: #8a919f;
+    border: 1px dashed var(--bs-border-color);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+.brand-upload__state.is-set {
+    color: #0ea86c;
+    font-weight: 600;
+    border: 0;
+    background: rgba(14, 168, 108, 0.1);
+    padding: 5px 10px;
 }

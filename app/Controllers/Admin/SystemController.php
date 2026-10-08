@@ -3,8 +3,8 @@
  * @file app/Controllers/Admin/SystemController.php
  * @description 系统设置：站点信息 / 邮箱发送 / 员工管理 / 角色权限矩阵
  * @author AI
- * @version 0.6
- * @date 2026-09-14
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 namespace App\Controllers\Admin;
@@ -16,8 +16,10 @@ use App\Models\AdminModel;
 use App\Models\RoleModel;
 use App\Models\SettingsModel;
 use App\Models\WarehouseModel;
+use App\Services\BrandAsset;
 use App\Services\HomeContent;
 use App\Services\SiteChrome;
+use RuntimeException;
 
 final class SystemController extends BaseController
 {
@@ -48,6 +50,9 @@ final class SystemController extends BaseController
                 // 注册与实名设置：邮箱验证开关在「邮箱设置」页维护，此处只读展示便于总览
                 'register_email_verify' => SettingsModel::get('register_email_verify', '0'),
                 'realname_required'     => SettingsModel::get('realname_required', '0'),
+                // 品牌素材：未上传时为空串，视图按存在与否决定是否输出
+                'faviconUrl'            => BrandAsset::faviconUrl(),
+                'logoUrl'               => BrandAsset::logoUrl(),
             ],
         ], 'system_site', '基本信息');
     }
@@ -112,6 +117,23 @@ final class SystemController extends BaseController
         $this->saveNumberRows('homepage_stats', '官网首页-统计数字');
         $this->saveNumberRows('homepage_promises', '官网首页-服务承诺');
         $this->ok(null, '站点信息已保存');
+    }
+
+    /**
+     * 品牌素材上传：浏览器图标与网站 Logo（固定文件名覆盖，统一规格处理）
+     */
+    public function uploadBrand(): never
+    {
+        $this->requireStaff();
+        $this->enforce('system.manage');
+        $this->verifyCsrf();
+        $type = (string) Request::input('type', '');
+        try {
+            $url = BrandAsset::store($type, $_FILES['file'] ?? []);
+        } catch (RuntimeException $e) {
+            $this->fail($e->getMessage());
+        }
+        $this->ok(['type' => $type, 'url' => $url], '上传成功');
     }
 
     /**

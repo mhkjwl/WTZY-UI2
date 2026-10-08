@@ -2,8 +2,8 @@
  * @file assets/common/confirm.js
  * @description 二次确认弹窗组件 Confirm（规范 §4）：L1 普通确认 / L2 勾选确认 / L3 输入确认
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-09-12
  *
  * 实现说明：使用原生 <dialog showModal()> 而非 z-index 遮罩层。
  * 原生弹窗会被浏览器放入 top layer，层级永远高于页面上任何 z-index 元素；

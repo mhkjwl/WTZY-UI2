@@ -3,7 +3,7 @@
  * @file routes/web.php
  * @description 全站公共路由（首页门户）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

@@ -3,12 +3,13 @@
  * @file app/Views/layouts/site.php
  * @description 转运官网布局：顶部导航（按登录身份显示入口）+ 内容区 + 页脚
  * @author AI
- * @version 0.6
- * @date 2026-10-08
+ * @version 0.6.1
+ * @date 2026-10-09
  */
 
 use App\Core\Request;
 use App\Core\View;
+use App\Services\BrandAsset;
 use App\Services\SiteChrome;
 
 /**
@@ -54,6 +55,7 @@ $uiMigrated = View::isMigrated($__view ?? '');
         <meta name="description" content="<?= View::e($description) ?>">
     <?php endif; ?>
     <title><?= View::e($title ?? $appName) ?></title>
+    <?= BrandAsset::faviconTag() ?>
     <link rel="stylesheet" href="<?= View::asset('/assets/common/common.css') ?>">
     <link rel="stylesheet" href="<?= View::asset('/assets/common/site.css') ?>">
     <?php if ($uiMigrated): ?>

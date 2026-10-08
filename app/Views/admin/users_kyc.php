@@ -3,7 +3,7 @@
  * @file app/Views/admin/users_kyc.php
  * @description 实名认证审核页：统计 + 检索 + 局部表 + 审核对话框
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-14
  */
 

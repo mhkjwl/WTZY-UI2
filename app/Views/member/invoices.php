@@ -3,7 +3,7 @@
  * @file app/Views/member/invoices.php
  * @description 会员中心：发票管理（开票申请 + 进度；翻页与提交后局部刷新，规范 §2.5）
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 

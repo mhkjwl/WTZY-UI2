@@ -3,7 +3,7 @@
  * @file app/Views/admin/marketing_content.php
  * @description 全站公告局部内容
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-12
  */
 

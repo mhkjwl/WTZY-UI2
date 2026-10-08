@@ -3,7 +3,7 @@
  * @file app/Views/member/finance.php
  * @description 会员中心：余额概览与最近资金流水
  * @author AI
- * @version 0.6
+ * @version 0.6.1
  * @date 2026-09-13
  */
 
